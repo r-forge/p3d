@@ -1,0 +1,12 @@
+Text3d <-
+function( obj, ...) {
+    # Note that this is the 'same' as Lines3d
+    "
+    Text3d allows arguments to be vectors or matrices whose corresponding
+    axes as specified with names of the form 'x', 'xy', 'yxz', etc.
+    The text argument is called 'texts'. Other key arguments are adj and
+    justify
+    "
+    UseMethod("Text3d")
+}
+

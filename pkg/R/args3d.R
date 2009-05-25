@@ -1,0 +1,56 @@
+args3d <-
+function(...) {
+help <- "
+
+    - returns a list with a matrix, x with xyz values and with other args
+    - can specify 'min', 'max', 'mid' as values not mixed with numerical
+      values
+    CAUTION: If first argument is positional then variables
+             must be in order x,y,z
+"
+    na2f <- function( x ) {
+         x[is.na(x)] <- FALSE
+         x
+    }
+    args <- list(...)
+    
+    getdim <- function(nam, args){
+        pos <- regexpr(nam, names(args)) 
+        arg.ind <- pos > 0
+        if( length(pos <- pos [ pos > 0 ])==0) return(0)
+        cbind( args[arg.ind][[1]])[,pos]
+    }
+    
+    if( is.null(names(args))) names(args) <- rep("",length(args) )
+    nn <- names(args)
+		#disp(nn)
+        if ( (length(nn) >2) && all( nn[1:3] =="")) names(args) [1:3] <- c('x','y','z')
+        nn <- names(args)
+        if ( (length(nn) > 0) && (nn[1] == "") ){
+						 names(args)[1] <- 'xyz'
+						 args[[1]] = rbind( args[[1]])	
+				}
+        nn <- names(args)
+        #disp(nn)
+    nxyz <- sapply( nn, regexpr, "xyzyxzxzyyzxzxyzyz")
+    #disp(nxyz)
+
+    xyzs <- args[nxyz > 0]
+    #disp(xyzs)
+    oargs <- args[nxyz < 0]
+    #disp(oargs)
+		xyz <- cbind( x=getdim('x', xyzs), y=getdim('y',xyzs), z=getdim('z',xyzs))
+    if ( is.character(xyz) ) {
+        bbox <- par3d('bbox')
+        mins <- matrix(bbox[c(1,3,5)], nrow = nrow(xyz), ncol=3, byrow = T)
+        maxs <- matrix(bbox[1+c(1,3,5)], nrow = nrow(xyz), ncol=3, byrow = T)
+        mids <- (mins + maxs)/2
+        xyz[na2f(xyz=='min')] <- mins[na2f(xyz=='min')]
+        xyz[na2f(xyz=='max')] <- maxs[na2f(xyz=='max')]
+        xyz[na2f(xyz=='mid')] <- mids[na2f(xyz=='mid')]
+        mode(xyz) <- "numeric"
+    }
+    a <- list(x = xyz)
+    c(a,oargs)
+}
+

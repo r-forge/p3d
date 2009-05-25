@@ -1,0 +1,14 @@
+data.Ell3d <-
+function(  ... ) {
+    #
+    # NEEDS WORK:
+    # should work like 'ellipsoid = TRUE' when called with no arguments
+    #
+      a <- args3d(...)
+      xyz <- a$x
+      oargs <- a[-1]
+      center <- apply( xyz, 2, mean, na.rm = T)
+      shape <-  var( xyz, na.rm = T, use = "complete")
+      do.call( Ell3d, c( center= center, shape = shape, oargs))
+}
+
