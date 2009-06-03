@@ -17,9 +17,9 @@ function( fit, names.vars = pars$names,
         FUN = function (x) x,  # inverse of transfomation of Y in model,
         # e.g. if model is log(y) ~ x + z then FUN = exp
         ...) {
-    ##
-    ##  add groups
-    ##
+##
+##  add groups
+##
 
     Mod.vars <- function(fit) UseMethod("Mod.vars")
     Mod.vars.function <- function(fit) names(formals(fit))
@@ -55,6 +55,9 @@ function( fit, names.vars = pars$names,
         col.grid <- rep(col.grid, length.out = length( g.levs) )
         pred <- expand.grid( x = xvals, z = zvals, g = g.levs )
         names(pred) <- names.vars[c("x","z","g")]
+        
+        # THE FOLLOWING IS WRONG: THIS NEEDS TO BE INCORPORATED IN
+        # THE CALL TO EXPAND.GRID
         if ( !is.null( other.vars)) {
              for ( i in 1:length(other.vars)) {
                  pred[[ names(other.vars)[i] ]] <- other.vars[[i]]

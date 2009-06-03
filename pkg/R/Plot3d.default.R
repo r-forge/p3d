@@ -8,6 +8,7 @@ function(x, y, z, xlab, ylab, zlab, groups = NULL, ...) {
    ####  NOTE: This function needs considerable work
    if ( ! is.null(groups)) stop("groups implemented only in Plot3d.formula")
    if ( is.matrix(x) || is.data.frame(x)) {
+      if( ncol (x) < 3) x <- cbind( x , 0, 0)
       if ( is.null( colnames( x ))) {
           colnames(x) <- paste( deparse(substitute(x)), 1:ncol(x))
       }
@@ -27,8 +28,8 @@ function(x, y, z, xlab, ylab, zlab, groups = NULL, ...) {
 
       # scat3d(x,y,z, xlab = deparse(substitute(x)), ylab = deparse(substitute(y)), zlab = deparse(substitute(z)), ... )
    }
-   fmla <- as.formula( paste( names(data)[2] ,"~", names(data)[1],
-        "+", names(data)[3]))
+   fmla <- as.formula( paste( "`",names(data)[2],"` ~ `", names(data)[1],
+        "` + `", names(data)[3], "`", sep = ''))
    Plot3d( fmla, data , ...)
 }
 

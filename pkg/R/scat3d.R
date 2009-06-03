@@ -108,10 +108,12 @@ function(x, y, z, xlab=deparse(substitute(x)), ylab=deparse(substitute(y)),
         rgl.texts(axx[1], axy[2], axz[1] , ylab, adj=1, color=text.col)
         rgl.texts(axx[1], axy[1], axz[2] , zlab, adj=1, color=text.col)
 				
-				scale <-  1/c( diff(range(c(axx,xlim))), diff(range(c(axy,ylim))), diff(range(c(axz,zlim))))
+        scale <-  1/c( diff(range(c(axx,xlim))), diff(range(c(axy,ylim))), diff(range(c(axz,zlim))))
+        scale[is.na(scale)] <- max( scale, na.rm = T)
         scale <- scale / mean(scale)
+        disp( scale )
         par3d( scale =  scale)
-				par3d( zoom = 4*min(scale))        # need to improve zoom and fov
+				par3d( zoom = 4*min(scale,na.rm=T))        # need to improve zoom and fov
         Plot3d.par( abox = c( axx, axy, axz))
 
         ##
