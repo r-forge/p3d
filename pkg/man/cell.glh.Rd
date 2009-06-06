@@ -76,7 +76,7 @@ cell.glh(obj, which.coef = 1:2, levels = 0.95, Scheffe = FALSE, dfn = 2, center.
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Georges Monette
 }
 \note{
 %%  ~~further notes~~

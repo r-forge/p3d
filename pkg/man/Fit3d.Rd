@@ -85,7 +85,7 @@ Fit3d(fit, names.vars = pars$names, other.vars = NULL, grid.lines = 26, col = "b
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Georges Monette
 }
 \note{
 %%  ~~further notes~~

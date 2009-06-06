@@ -4,12 +4,12 @@
 \alias{p3d}
 \docType{package}
 \title{
-What the package does (short line)
-~~ package title ~~
+Visualization of models in 3D
 }
 \description{
-More about what it does (maybe more than one line)
-~~ A concise (1-5 lines) description of the package ~~
+    \code{p3d} is a very rough collection of functions to help visualize models
+    that are expressed as functions of two independent variables with the
+    addition of a possible categorical variable.
 }
 \details{
 \tabular{ll}{
@@ -23,10 +23,9 @@ LazyLoad: \tab yes\cr
 ~~ An overview of how to use the package, including the most important functions ~~
 }
 \author{
-Who wrote it
+Georges Monette
 
-Maintainer: Who to complain to <yourfault@somewhere.net>
-~~ The author and/or maintainer of the package ~~
+Maintainer: Georges Monette <georges@yorku.ca>
 }
 \references{
 ~~ Literature or other references for background information ~~
@@ -41,6 +40,6 @@ Maintainer: Who to complain to <yourfault@somewhere.net>
 ~~ simple examples of the most important functions ~~
 }
 \section{Changes}{
-\item{Lines3d.default}{2009-05-09: disabled line changing 'lwd' to 'size' since 'segments3d' uses 'lwd'.
+\item{Lines3d.default}{2009-05-09: disabled line changing 'lwd' to 'size' since 'segments3d' uses 'lwd'.}
 }
 

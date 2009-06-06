@@ -46,7 +46,7 @@ spin(theta = 0, phi = 15, fov = par3d("FOV"), zoom = par3d("zoom"), scale = par3
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Georges Monette
 }
 \note{
 %%  ~~further notes~~

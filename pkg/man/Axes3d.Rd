@@ -3,7 +3,7 @@
 \alias{Axes3d}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Draw axes for a 3D plot
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
@@ -14,42 +14,38 @@ Axes3d(n = 5, len = 0.05, col = "black", ...)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{n}{
-%%     ~~Describe \code{n} here~~
+Number of axis tick marks
 }
   \item{len}{
-%%     ~~Describe \code{len} here~~
+Length of axis tick marks
 }
   \item{col}{
-%%     ~~Describe \code{col} here~~
+Color for axes
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+Other arguments passed down to \code{\link{Text3d}}, \code{\link{Lines3d}}, ...
 }
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+None
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
-%%  ~~who you are~~
+Georges Monette
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{Text3d}}, \code{\link{Lines3d}}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----

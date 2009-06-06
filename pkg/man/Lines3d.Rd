@@ -3,10 +3,11 @@
 \alias{Lines3d}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Draw lines in 3D space
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+    Lines3d allows arguments to be vectors or matrices whose corresponding
+    axes as specified with names of the form 'x', 'xy', 'yxz', etc.
 }
 \usage{
 Lines3d(obj, ..., col = "blue")
@@ -37,7 +38,7 @@ Lines3d(obj, ..., col = "blue")
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Georges Monette
 }
 \note{
 %%  ~~further notes~~

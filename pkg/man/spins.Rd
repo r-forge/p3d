@@ -40,7 +40,7 @@ spins(inc.theta = 1/4, inc.phi = 0, theta = NULL, phi = NULL)
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Georges Monette
 }
 \note{
 %%  ~~further notes~~

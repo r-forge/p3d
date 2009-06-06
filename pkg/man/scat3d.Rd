@@ -163,7 +163,7 @@ scat3d(x, y, z, xlab = deparse(substitute(x)), ylab = deparse(substitute(y)), zl
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Georges Monette
 }
 \note{
 %%  ~~further notes~~

@@ -52,7 +52,7 @@ Plot3d.default(x, y, z, xlab, ylab, zlab, groups = NULL, ...)
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Georges Monette
 }
 \note{
 %%  ~~further notes~~

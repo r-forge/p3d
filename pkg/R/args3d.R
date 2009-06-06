@@ -42,8 +42,8 @@ help <- "
 		xyz <- cbind( x=getdim('x', xyzs), y=getdim('y',xyzs), z=getdim('z',xyzs))
     if ( is.character(xyz) ) {
         bbox <- par3d('bbox')
-        mins <- matrix(bbox[c(1,3,5)], nrow = nrow(xyz), ncol=3, byrow = T)
-        maxs <- matrix(bbox[1+c(1,3,5)], nrow = nrow(xyz), ncol=3, byrow = T)
+        mins <- matrix(bbox[c(1,3,5)], nrow = nrow(xyz), ncol=3, byrow = TRUE)
+        maxs <- matrix(bbox[1+c(1,3,5)], nrow = nrow(xyz), ncol=3, byrow = TRUE)
         mids <- (mins + maxs)/2
         xyz[na2f(xyz=='min')] <- mins[na2f(xyz=='min')]
         xyz[na2f(xyz=='max')] <- maxs[na2f(xyz=='max')]

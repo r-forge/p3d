@@ -43,7 +43,7 @@ Init3d(par3d = list(), family = c("sans", "serif", "mono", "symbol"), cex = 0.8,
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Georges Monette
 }
 \note{
 %%  ~~further notes~~

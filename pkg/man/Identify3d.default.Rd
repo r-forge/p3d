@@ -58,7 +58,7 @@ Identify3d.default(x = .Plot3d.par$data[[.Plot3d.par$names["x"]]], y = .Plot3d.p
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Georges Monette
 }
 \note{
 %%  ~~further notes~~

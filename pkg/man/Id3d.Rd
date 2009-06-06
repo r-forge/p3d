@@ -34,7 +34,7 @@ Id3d(labels = row.names(data), ...)
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Georges Monette
 }
 \note{
 %%  ~~further notes~~

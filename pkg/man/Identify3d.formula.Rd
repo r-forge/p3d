@@ -43,7 +43,7 @@ Identify3d.formula(formula = attr(data, "formula"), data = sys.parent(), labels 
 %% ~put references to the literature/web site here ~
 }
 \author{
-%%  ~~who you are~~
+Georges Monette
 }
 \note{
 %%  ~~further notes~~
