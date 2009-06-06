@@ -9,7 +9,7 @@ function( shape, u , radius = 1) {
                      # Note: Z is assumed to be of full column rank but not necessarily X.
                      xq <- qr(t(Z) %*% ip %*% X, tol = tol)
                      if ( xq$rank == 0 ) return( Z )
-                     a <- qr.Q( xq, complete = T ) [ ,-(1:xq$rank)]
+                     a <- qr.Q( xq, complete = TRUE ) [ ,-(1:xq$rank)]
                      Z %*% a
             }
 

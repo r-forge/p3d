@@ -5,7 +5,7 @@ function (
     z = .Plot3d.par$data[[.Plot3d.par$names['z']]],
     labels = rownames(.Plot3d.par$data), groups = NULL,
     col = c("blue", "green", "orange", "magenta", "cyan", "red", "yellow", "gray"),
-    adj = 0, debug = F, pad = 0,
+    adj = 0, debug = FALSE, pad = 0,
     offset = ((100/length(x))^(1/3)) * 0.02) {
     ## added by GM Nov 9
        if ( ( is.matrix(x) && (ncol(x) > 1) ) || is.data.frame(x) ) {

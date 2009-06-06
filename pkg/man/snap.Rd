@@ -3,10 +3,16 @@
 \alias{snap}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Take a snapshot of the current 3D plot
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+\code{snap} is designed as a more convenient interface to \code{rgl.snapshot},
+allowing one to set a base filename for graphic output files, an initial
+sequence number, and then just use
+
+\code{snap()}
+
+to capture the current screen image to a sequentially numbered output file.
 }
 \usage{
 snap(suffix = "", fn = .snap.fn, n = .snap.n, inc = TRUE, fmt = "png")
@@ -17,27 +23,24 @@ snap(suffix = "", fn = .snap.fn, n = .snap.n, inc = TRUE, fmt = "png")
 %%     ~~Describe \code{suffix} here~~
 }
   \item{fn}{
-%%     ~~Describe \code{fn} here~~
+Base file name, typically set by assigning a character string to \code{.snap.fn}
 }
   \item{n}{
 %%     ~~Describe \code{n} here~~
 }
   \item{inc}{
-%%     ~~Describe \code{inc} here~~
+Should the function increment the sequential number in the global environment?
 }
   \item{fmt}{
-%%     ~~Describe \code{fmt} here~~
+Output graphic file format. Default: \code{png}
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+Output files are written to the current directory.  Use \code{setwd} to put them where
+you want.
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+%Returns invisibly the name of the snapshot file
 }
 \references{
 %% ~put references to the literature/web site here ~
@@ -45,14 +48,14 @@ snap(suffix = "", fn = .snap.fn, n = .snap.n, inc = TRUE, fmt = "png")
 \author{
 Georges Monette
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+%\code{\link{[rgl]{rgl.snapshot}}}, ~~~
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
@@ -79,5 +82,5 @@ function( suffix = "", fn = .snap.fn, n = .snap.n, inc = TRUE, fmt = "png") {
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ iplot }
+%\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

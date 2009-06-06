@@ -7,8 +7,8 @@ function(  ... ) {
       a <- args3d(...)
       xyz <- a$x
       oargs <- a[-1]
-      center <- apply( xyz, 2, mean, na.rm = T)
-      shape <-  var( xyz, na.rm = T, use = "complete")
+      center <- apply( xyz, 2, mean, na.rm = TRUE)
+      shape <-  var( xyz, na.rm = TRUE, use = "complete")
       do.call( Ell3d, c( center= center, shape = shape, oargs))
 }
 

@@ -32,7 +32,7 @@ Ell3d.default <- function( x,  radius = 1, col,
              vv <- var(gmat)
              #disp(vv)
              #disp(gmat)
-             ev <- eigen(vv,symmetric=T, only.values = T)
+             ev <- eigen(vv,symmetric=TRUE, only.values = TRUE)
              # fatten up nearly singular matrix to avoid crash in rgl
              if ( (max(ev$values)/min(ev$values)) > 1e07 )
                   vv <- vv + (max(ev$values)*1e-07) *diag(nrow(vv))

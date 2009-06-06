@@ -3,203 +3,125 @@
 \alias{Fit3d}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+3D plots of fitted response surfaces and functions
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+For the current plot, created with \code{\link{Plot3d}}, you can use \code{Fit3d} to superimpose
+the fitted response surface for one or more models. For example, following
+
+\code{Plot3d( y ~ x + z | g, data)}
+
+the fitted surface for a model fit with \code{lm} can be displayed with
+
+\code{Fit3d ( lm( y ~ x*z + I(x^2) + I(z^2) + g, data ))}
+
+Other forms are possible, as described under Details.
+ 
 }
 \usage{
-Fit3d(fit, names.vars = pars$names, other.vars = NULL, grid.lines = 26, col = "blue", fill = TRUE, grid = TRUE, base.grid = FALSE, col.grid = col, col.res = col, residuals = FALSE, xlim = c(bbox[1], bbox[2]), zlim = c(bbox[5], bbox[6]), verbose = 0, type = "response", alpha = 0.5, lit = FALSE, FUN = function(x) x, ...)
+Fit3d(fit, names.vars = pars$names, other.vars = NULL, 
+	grid.lines = 26, col = "blue", 
+	fill = TRUE, grid = TRUE, base.grid = FALSE, col.grid = col, col.res = col, 
+	residuals = FALSE, xlim = c(bbox[1], bbox[2]), zlim = c(bbox[5], bbox[6]), 
+	verbose = 0, type = "response", alpha = 0.5, lit = FALSE, FUN = function(x) x, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{fit}{
-%%     ~~Describe \code{fit} here~~
+A fitted model object (e.g., of class \code{lm}, \code{glm} or \code{lme}  )
+involving two quantitative covariates and possibly other variables,
+or a function of two continuous variables and possibly other variables
 }
   \item{names.vars}{
 %%     ~~Describe \code{names.vars} here~~
 }
-  \item{other.vars}{
-%%     ~~Describe \code{other.vars} here~~
-}
+  \item{other.vars}{list of values for variables used in model but not in display}
   \item{grid.lines}{
-%%     ~~Describe \code{grid.lines} here~~
+Number of grid lines for \code{x} and \code{z} variables
 }
   \item{col}{
-%%     ~~Describe \code{col} here~~
+The color used for the grid of fitted values
+and other annotations unless specified with other
+\code{col.*} arguments.
 }
   \item{fill}{
-%%     ~~Describe \code{fill} here~~
+Draw fitted or function values as a shaded surface? Default: TRUE
 }
   \item{grid}{
-%%     ~~Describe \code{grid} here~~
+Draw fitted or function values as a grid with lines? Default: TRUE
 }
-  \item{base.grid}{
-%%     ~~Describe \code{base.grid} here~~
-}
+  \item{base.grid}{draw grid in base horizontal plane?  Default: FALSE}
+
   \item{col.grid}{
-%%     ~~Describe \code{col.grid} here~~
+Color used to draw the grid if \code{grid=TRUE}
 }
   \item{col.res}{
-%%     ~~Describe \code{col.res} here~~
+Color used to show residuals if \code{residuals=TRUE}
 }
   \item{residuals}{
-%%     ~~Describe \code{residuals} here~~
+Show residuals in the plot (i.e., lines from the surface to the points)? 
 }
   \item{xlim}{
-%%     ~~Describe \code{xlim} here~~
+Limits for the \code{x} variable, to override those in the current plot
 }
   \item{zlim}{
-%%     ~~Describe \code{zlim} here~~
+Limits for the \code{y} variable, to override those in the current plot
 }
   \item{verbose}{
-%%     ~~Describe \code{verbose} here~~
-}
+Tell me what you're doing}
   \item{type}{
-%%     ~~Describe \code{type} here~~
+For models fit with \code{glm}, fitted values can be displayed on
+the \code{type="response"} scale or the \code{type="link"} scale.
 }
-  \item{alpha}{
-%%     ~~Describe \code{alpha} here~~
-}
+  \item{alpha}{Transparency value for the fitted surface}
+
   \item{lit}{
-%%     ~~Describe \code{lit} here~~
+rgl lighting. See ...
 }
   \item{FUN}{
-%%     ~~Describe \code{FUN} here~~
+The response for a model can be a transformation of the scale of the
+plot. The \code{FUN} argument is used to transform the fitted value
+back to the scale of the graph, e.g.
+
+\code{fit <- lm( log(y) ~ x * g, data); Fit3d( fit, FUN = exp)}
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+Other arguments passed down
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+Details: TBW
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+No useful value, unless \code{verbose=TRUE}, in which case \code{summary(fit)}
+is returned.
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Georges Monette
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{Plot3d}}
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function( fit, names.vars = pars$names,
-        other.vars = NULL,   #list of values for variables used in model but not in display
-        grid.lines = 26,
-        col = 'blue',
-        fill = TRUE, grid = TRUE ,
-        base.grid = FALSE,   # draw grid in base horizontal plane
-        col.grid = col,
-        col.res = col,
-        residuals = FALSE,
-        xlim = c(bbox[1], bbox[2]),
-        zlim = c(bbox[5], bbox[6]),
-        verbose = 0,
-        type = 'response',
-        alpha = .5,
-        lit = FALSE,
-        FUN = function (x) x,  # inverse of transfomation of Y in model,
-        # e.g. if model is log(y) ~ x + z then FUN = exp
-        ...) {
-    ##
-    ##  add groups
-    ##
-
-    Mod.vars <- function(fit) UseMethod("Mod.vars")
-    Mod.vars.function <- function(fit) names(formals(fit))
-    Mod.vars.lme <- function(fit) rownames(attr(terms(fit),'factors'))
-    Mod.vars.default <- function(fit) names( model.frame(fit))
-    
-    mod.vars <- Mod.vars(fit)
-    
-    
-    PP <- function(fit,...) UseMethod("PP")
-    PP.function <- function(fit,...) Evalf(fit,...)
-    PP.lme <- function(fit,...) predict( fit,..., level = 0)
-    PP.glm <- function(fit,...) function(fit,...) {
-           if( type == 'response' ) predict( fit,..., type ='response')
-           if( type == 'link') predict( fit, ..., type = 'link')
-    }
-    PP.default <- function(fit, ...) predict(fit, ...)
-    
-    Levels <- function( x ) if (is.factor(x)) levels(x) else unique(x)
-
-    pars <- .Plot3d.par
-    if ( missing(col)) col <- pars$col
-    if ( verbose > 1) disp(col)
-    if ( verbose > 1) disp(mod.vars)
-    use.groups <-  names.vars['g'] \%in\% mod.vars
-    if ( verbose > 1 ) disp(use.groups)
-    bbox <- par3d('bbox')
-    xvals <- seq(xlim[1],xlim[2], length.out = grid.lines)
-    zvals <- seq(zlim[1],zlim[2], length.out = grid.lines)
-    if (use.groups) {
-        g.levs <- Levels( pars$data[[ pars$names['g'] ]])
-        col <- rep(col, length.out = length(g.levs) )
-        col.grid <- rep(col.grid, length.out = length( g.levs) )
-        pred <- expand.grid( x = xvals, z = zvals, g = g.levs )
-        names(pred) <- names.vars[c("x","z","g")]
-        if ( !is.null( other.vars)) {
-             for ( i in 1:length(other.vars)) {
-                 pred[[ names(other.vars)[i] ]] <- other.vars[[i]]
-             }
-        }
-        yhats <- array( FUN( PP(fit, newdata = pred )),
-                dim = c(grid.lines, grid.lines, length(g.levs)))
-    } else {
-        pred <- expand.grid( x = xvals, z = zvals)
-        names(pred) <- names.vars[c("x","z")]
-        if ( !is.null( other.vars)) {
-             for ( i in 1:length(other.vars)) {
-                 pred[[ names(other.vars)[i] ]] <- other.vars[[i]]
-             }
-        }
-        yhats <- array( FUN(PP(fit, newdata = pred )),
-                dim=c( grid.lines, grid.lines,1))
-    }
-    for ( gi in 1:(dim(yhats)[3]) ) {
-        yhat <- yhats[ , ,gi]
-        if( base.grid == TRUE ) yhat[] <- bbox[3]
-        if (fill) rgl.surface(xvals, zvals, yhat, color = col[gi],
-                                alpha=alpha, lit=lit,...)
-        if (grid) rgl.surface(xvals, zvals, yhat, color=col.grid[gi], alpha=alpha, lit=lit,
-                                    front="lines", back="lines",...)
-    }
-    if (residuals ){  
-        mf <- .Plot3d.par$data
-        fitted <- PP( fit, newdata = mf )
-        yy <- mf[[ names.vars['y'] ]]
-        xx <- mf[[ names.vars['x'] ]]
-        zz <- mf[[ names.vars['z'] ]]
-        fitted <- PP(fit)
-        if ( base.grid == TRUE ) fitted <- 0*fitted + bbox[3]
-        rgl.lines(as.vector(rbind(xx,xx)), as.vector(rbind(yy,fitted)),
-            as.vector(rbind(zz,zz)),
-            col=col.res)
-    }
-    if ( verbose > 0 && !is.function(fit) ) summary(fit)
-  }
+ library(car)
+ data(Prestige)
+ Prestige$inc <- Prestige$income / 1000
+ open3d()
+ Plot3d ( inc ~ women + education|type , Prestige)
+ 
+ Fit3d ( lm(inc ~ women + education,Prestige))
+ Fit3d ( lm(inc ~ women * education,Prestige), col="pink")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ models }
+\keyword{ hplot }% __ONLY ONE__ keyword per line

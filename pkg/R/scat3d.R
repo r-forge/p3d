@@ -2,7 +2,7 @@ scat3d <-
 function(x, y, z, xlab=deparse(substitute(x)), ylab=deparse(substitute(y)),
     zlab=deparse(substitute(z)),
     xtend = .05,
-    debug = T,
+    debug = TRUE,
     xlim = xrange( x, xtend ),
     ylim = xrange( y, xtend ),
     zlim = xrange( z, xtend ),
@@ -36,9 +36,9 @@ function(x, y, z, xlab=deparse(substitute(x)), ylab=deparse(substitute(y)),
     level=0.5,
     model.summary=FALSE,
     verbose = 0,
-    clear = T,
+    clear = TRUE,
     pow = -1,
-    origin = F,
+    origin = FALSE,
     axes = TRUE) {
 
     xrange <- function( x, xtend) {
@@ -109,11 +109,11 @@ function(x, y, z, xlab=deparse(substitute(x)), ylab=deparse(substitute(y)),
         rgl.texts(axx[1], axy[1], axz[2] , zlab, adj=1, color=text.col)
 				
         scale <-  1/c( diff(range(c(axx,xlim))), diff(range(c(axy,ylim))), diff(range(c(axz,zlim))))
-        scale[is.na(scale)] <- max( scale, na.rm = T)
+        scale[is.na(scale)] <- max( scale, na.rm = TRUE)
         scale <- scale / mean(scale)
         disp( scale )
         par3d( scale =  scale)
-				par3d( zoom = 4*min(scale,na.rm=T))        # need to improve zoom and fov
+				par3d( zoom = 4*min(scale,na.rm=TRUE))        # need to improve zoom and fov
         Plot3d.par( abox = c( axx, axy, axz))
 
         ##

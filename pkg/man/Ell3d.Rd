@@ -3,11 +3,15 @@
 \alias{Ell3d}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Draw ellipsoids
-%%  ~~function to do ... ~~
+Add ellipsoid(s) to a 3D plot
 }
 \description{
-So far, Ell3d() will only draw data ellipsoids around displayed data.
+Adds data ellipsoids(s) to a 3D plot using the data frame
+for the plot.
+%So far, Ell3d() will only draw data ellipsoids around displayed data.
+
+\bold{Note:} The argument list of Ell3d has changed.  This documentation
+should be regenerated and revised.
 }
 \usage{
 Ell3d()

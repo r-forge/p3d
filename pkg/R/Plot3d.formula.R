@@ -32,7 +32,7 @@ function( formula = attr(data, "formula"),
     if ( ncol(dd) == 3) {
         nams <- names(dd)
         names(nams) <- c('y','x','z')
-        Plot3d.par( data = dd, names=nams, has.groups = F, col=col)
+        Plot3d.par( data = dd, names=nams, has.groups = FALSE, col=col)
         if ( verbose > 1 ) disp( Plot3d.par() )
         scat3d( dd[[2]], dd[[1]], dd[[3]],
             xlab , ylab, zlab,
@@ -49,7 +49,7 @@ function( formula = attr(data, "formula"),
         if( verbose) disp(ncol(dd))
         nams <- names(dd)
         names(nams) <- c('y','x','z','g')
-        Plot3d.par( data = dd, names=nams, has.groups = T, col=col)
+        Plot3d.par( data = dd, names=nams, has.groups = TRUE, col=col)
         if ( verbose > 1 ) disp( Plot3d.par() )
         scat3d( dd[[2]], dd[[1]], dd[[3]],
             xlab, ylab, zlab, groups = dd[[4]], 
