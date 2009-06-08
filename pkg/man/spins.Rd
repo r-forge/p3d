@@ -3,10 +3,11 @@
 \alias{spins}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Spin the current rgl window continuously
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Spins the current rgl window with constant increment(s) in theta and/or phi.
+Use \code{<ESC>} in the R window to stop.
 }
 \usage{
 spins(inc.theta = 1/4, inc.phi = 0, theta = NULL, phi = NULL)
@@ -14,42 +15,38 @@ spins(inc.theta = 1/4, inc.phi = 0, theta = NULL, phi = NULL)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{inc.theta}{
-%%     ~~Describe \code{inc.theta} here~~
+Increment for rotation about the vertical, \code{y}, axis.
 }
   \item{inc.phi}{
-%%     ~~Describe \code{inc.phi} here~~
+Increment for rotation around the \code{x} axis.
 }
   \item{theta}{
-%%     ~~Describe \code{theta} here~~
+Initial value for \code{theta}. By default, the current orientation is used.
 }
   \item{phi}{
-%%     ~~Describe \code{phi} here~~
+Initial value for \code{phi}. By default, the current orientation is used.
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+TBW
 }
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
+\value{None}
+
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Georges Monette
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{spin}},
+\code{\link[rgl]{spin3d}}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
@@ -92,5 +89,5 @@ function( inc.theta = 1/4, inc.phi = 0, theta = NULL, phi = NULL) {
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ iplot }
+\keyword{ dynamic }% __ONLY ONE__ keyword per line

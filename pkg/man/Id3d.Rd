@@ -3,10 +3,14 @@
 \alias{Id3d}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Identify points in the current Plot3d rgl window
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Drag a rectangle around a point to identify it, with the point label
+as specified in the \code{labels} argument.
+
+Drag a rectangle around an empty region to exit from point identification
+mode, or make the R console the active window and press \code{<ESC>}.
 }
 \usage{
 Id3d(labels = row.names(data), ...)
@@ -14,36 +18,32 @@ Id3d(labels = row.names(data), ...)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{labels}{
-%%     ~~Describe \code{labels} here~~
+Observation labels
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+Other arguments, passed down
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+By default, observations are labeled using the \code{row.names} in the 
+data frame for the current \code{Plot3d} window.
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
-\references{
+None}
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Georges Monette
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{Identify3d}}, ~~~
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
