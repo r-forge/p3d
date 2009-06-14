@@ -15,9 +15,9 @@ Visualization of models in 3D
 \tabular{ll}{
 Package: \tab p3d\cr
 Type: \tab Package\cr
-Version: \tab 0.05\cr
-Date: \tab 2009-05-09\cr
-License: \tab What license is it under?\cr
+Version: \tab 0.02\cr
+Date: \tab 2009-06-14\cr
+License: \tab GPL version 2 or newer\cr
 LazyLoad: \tab yes\cr
 }
 ~~ An overview of how to use the package, including the most important functions ~~
@@ -32,6 +32,7 @@ Maintainer: Georges Monette <georges@yorku.ca>
 %}
 %~~ Optionally other standard keywords, one per line, from file KEYWORDS in the R documentation directory ~~
 \keyword{ package }
+\keyword{ multivariate }
 \seealso{
 %~~ Optional links to other man pages, e.g. ~~
 \code{\link[rgl:rgl-package]{rgl}} ~~

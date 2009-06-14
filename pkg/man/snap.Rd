@@ -20,13 +20,17 @@ snap(suffix = "", fn = .snap.fn, n = .snap.n, inc = TRUE, fmt = "png")
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{suffix}{
-%%     ~~Describe \code{suffix} here~~
+Character string appended to \code{paste(fn, n)}, for use in naming a 
+related collection of figures (without incrementing \code{n}.
 }
   \item{fn}{
 Base file name, typically set by assigning a character string to \code{.snap.fn}
+in the global environment.
 }
   \item{n}{
-%%     ~~Describe \code{n} here~~
+Initial suffix number used to construct the file name, 
+typically set by assigning a character string to \code{.snap.n}
+in the global environment.
 }
   \item{inc}{
 Should the function increment the sequential number in the global environment?
@@ -40,11 +44,11 @@ Output files are written to the current directory.  Use \code{setwd} to put them
 you want.
 }
 \value{
-%Returns invisibly the name of the snapshot file
+Returns invisibly the name of the snapshot file
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Georges Monette
 }
@@ -58,27 +62,21 @@ Georges Monette
 %\code{\link{[rgl]{rgl.snapshot}}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+\dontrun{
+.snap.fn <- 'Lecture1'
+.snap.n <- '001'
 
-## The function is currently defined as
-function( suffix = "", fn = .snap.fn, n = .snap.n, inc = TRUE, fmt = "png") {
-         help <- "
-         
-         > .snap.fn <- 'Lecture1'
-         > .snap.n <- '001'
-         > snap()
-         
-         will invoke rgl.snapshot which filename 'Lecture1001.png' and increment
-         .snap.n to '002' in the .GlobalEnv
-         "
-         
-         filename <- paste( fn, n, suffix, ".", fmt , sep = "")
-         rgl.snapshot( filename, fmt = fmt)
-         if (inc) assign( ".snap.n", Inc(.snap.n), envir = .GlobalEnv)
-         invisible( filename )
-    }
+# ... generate an rgl graph ...
+snap()
+# ... will invoke rgl.snapshot which filename 'Lecture1001.png' and increment
+# .snap.n to '002' in the .GlobalEnv
+
+# ... generate an rgl graph ...
+snap()
+# ... will invoke rgl.snapshot which filename 'Lecture1002.png' and increment
+# .snap.n to '003' in the .GlobalEnv
+}
+
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

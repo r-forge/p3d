@@ -1,46 +1,106 @@
 \name{cell}
 \Rdversion{1.1}
 \alias{cell}
+\alias{cell.default}
+\alias{cell.glh}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Calculate confidence ellipses for parameters in linear models and linear hypotheses
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+\code{cell} is similar to \code{confidence.ellipse} in the \code{car}
+package,
+except that \code{cell} returns the points to form the ellipse(s)
+which must be plotted with \code{plot(...,type='l')} or \code{lines(...)}.
+It currently has methods for \code{lm} (\code{cell.default}) and \code{glh} objects.
 }
 \usage{
-cell(...)
+cell(object, ...)
+
+\method{cell}{default}{object, which.coef, levels = 0.95, Scheffe = FALSE, dfn = 2, center.pch = 19, 
+center.cex = 1.5, segments = 51, xlab, ylab, las = par("las"), col = palette()[2], lwd = 2, lty = 1, 
+add = FALSE, ...}
+
+\method{cell}{glh}{object, which.coef = 1:2, levels = 0.95, Scheffe = FALSE, dfn = 2, center.pch = 19, 
+center.cex = 1.5, segments = 51, xlab, ylab, las = par("las"), col = palette()[2], lwd = 2, 
+lty = 1, add = FALSE, ...}
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
+   \item{object}{A \code{lm} or \code{glh} object}
+   
+  \item{which.coef}{
+Indices of the coefficients, from \code{coef(object)} for which the confidence ellipse
+is to be constructed.
+}
+  \item{levels}{
+One or more values of the confidence coverage of the ellipse(s).
+}
+  \item{Scheffe}{
+%%     ~~Describe \code{Scheffe} here~~
+}
+  \item{dfn}{
+The Scheffe dimension used to calculate the radii of the ellipse(s).
+i.e., use  \code{dfn = 1} to generate ellipses whose shadows are
+ordinary confidence intervals for individual parameters; use
+\code{dfn = 2} for 2-dimensional ellipses, etc.
+}
+  \item{center.pch}{
+Plotting character used to mark the center of the ellipse(s)
+}
+  \item{center.cex}{
+Size of the plotting character
+}
+  \item{segments}{Number of line segments used to generate the ellipse(s)}
+ 
+  \item{xlab}{
+Label for the horizontal coefficient of the plot.
+}
+  \item{ylab}{
+Label for the vertical coefficient of the plot.
+
+}
+  \item{las}{
+Style of axis labels
+}
+  \item{col}{
+Color for the ellipse(s)
+}
+  \item{lwd}{
+Line width for the ellipse(s)
+}
+  \item{lty}{
+Line type for the ellipse(s)
+}
+  \item{add}{
+This argument is not presently used
+}
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+Other arguments passed down [where?]
 }
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+Returns an object of class \code{ell} representing points on the boundaries of
+the confidence ellipse(s).
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Georges Monette
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{ell}}, for details on \code{ell} objects
+
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
@@ -61,5 +121,5 @@ function( ... )  {
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ dplot }
+\keyword{ aplot }% __ONLY ONE__ keyword per line

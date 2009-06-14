@@ -1,0 +1,10 @@
+Version 0.01 2009-05-09
+ o Initial upload to R-Forge
+ o Minor documentation edits (MF)
+
+Version 0.02 2009-06-14
+ o Begin to fix S3 methods for consistency: cell & friends (MF)
+   - Merged cell.R, cell.default.R, cell.glh.R & corresponding .Rd files (MF)
+
+
+ 

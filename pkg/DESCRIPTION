@@ -1,8 +1,8 @@
 Package: p3d
 Type: Package
 Title: Plot 3d data and fitted surfaces
-Version: 0.01
-Date: 2009-05-09
+Version: 0.02
+Date: 2009-06-14
 Author: G. Monette using a lot of material form John Fox using rgl
 Maintainer: Georges Monette <georges@yorku.ca>
 Description: Plot3d
