@@ -3,7 +3,7 @@
 \alias{args3d}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Process 3D arguments
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~

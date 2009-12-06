@@ -3,7 +3,7 @@
 \alias{Lines3d.default}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Draw lines in 3D
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~

@@ -3,7 +3,7 @@
 \alias{Points3d.default}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Plot points in 3D -- default input
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~

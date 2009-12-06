@@ -1,6 +1,6 @@
 Lines3d.default <-
-function( ..., col = 'blue' )  {
-    a <- args3d(..., col=col)
+function( ..., color = 'blue' )  {
+    a <- args3d(..., color=color)
     xyz <- a$x
     if (nrow(xyz) == 0) return( invisible(0))
     nas <- apply(xyz, 1, function(x) any(is.na(x)))

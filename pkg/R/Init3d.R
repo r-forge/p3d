@@ -1,6 +1,7 @@
 Init3d <-
 function( par3d = list(),
       family = c('sans','serif', "mono", "symbol"),
+      mouseMode = c('polar','fov','zoom'),
       cex = .8,
       font = 1,
       ...) {

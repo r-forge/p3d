@@ -3,7 +3,7 @@
 \alias{Plot3d.par}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Manipulate parameters for 3D plotting
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~

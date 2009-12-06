@@ -3,7 +3,7 @@
 \alias{spin}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Spin a 3D plot
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~

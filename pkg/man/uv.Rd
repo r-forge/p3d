@@ -3,7 +3,7 @@
 \alias{uv}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Conjugate complement of a space
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~

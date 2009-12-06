@@ -3,7 +3,7 @@
 \alias{Surf3d}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Add a surface to 3D plot (in development)
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~

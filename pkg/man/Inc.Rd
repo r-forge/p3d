@@ -3,7 +3,7 @@
 \alias{Inc}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Increment a number possibly represented in a character string or factor
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~

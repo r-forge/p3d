@@ -3,7 +3,7 @@
 \alias{Plot3d.formula}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Plot points in 3D using a formula syntax
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~

@@ -3,7 +3,7 @@
 \alias{xy}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Points from list for plotting
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~

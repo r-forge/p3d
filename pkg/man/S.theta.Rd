@@ -3,7 +3,7 @@
 \alias{S.theta}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Rotate around vertical axis by phi degrees
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~

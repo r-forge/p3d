@@ -3,7 +3,7 @@
 \alias{Long3d}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Represent hierarchical longitudinal data in 3D
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~

@@ -3,7 +3,7 @@
 \alias{ell.conj}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-%%  ~~function to do ... ~~
+Find conjugate axes or tangent lines to ellipse
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~

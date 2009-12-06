@@ -3,6 +3,7 @@
 \alias{Text3d}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
+Add text to a 3D plot (in development)
 %%  ~~function to do ... ~~
 }
 \description{
