@@ -20,7 +20,22 @@ Date: \tab 2009-06-14\cr
 License: \tab GPL version 2 or newer\cr
 LazyLoad: \tab yes\cr
 }
-~~ An overview of how to use the package, including the most important functions ~~
+A simple example illustrated the major features of \code{p3d}:
+
+  library(p3d)
+  library(car)
+
+  data(Prestige)
+
+  fit <- lm( women ~ education * prestige * type, Prestige)
+  
+  Init3d()
+  Plot3d( women ~ education + prestige | type, Prestige)
+  Fit3d( fit )
+  Ell3d()
+
+  snap()
+
 }
 \author{
 Georges Monette
