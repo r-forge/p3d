@@ -1,9 +1,8 @@
-Version 0.02
-	o Initial version on R-Forge
-
 Version 0.02-1 (11-28-2010)
 	o Added data set 'Smoking'
 	o Added help files for Plot3d and Smoking
 	o Started fixing bugs with Plot3d
 
+Version 0.02
+	o Initial version on R-Forge
 

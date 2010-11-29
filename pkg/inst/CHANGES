@@ -6,5 +6,11 @@ Version 0.02 2009-06-14
  o Begin to fix S3 methods for consistency: cell & friends (MF)
    - Merged cell.R, cell.default.R, cell.glh.R & corresponding .Rd files (MF)
 
+Version 0.02-1 (11-28-2010) (GM)
+	o Added data set 'Smoking'
+	o Added help files for Plot3d and Smoking
+	o Started fixing bugs with Plot3d
+
+
 
  
