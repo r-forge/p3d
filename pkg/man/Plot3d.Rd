@@ -1,113 +1,181 @@
 \name{Plot3d}
-\Rdversion{1.1}
 \alias{Plot3d}
-%- Also NEED an '\alias' for EACH other topic documented here.
+\alias{Plot3d.default}
+\alias{Plot3d.lm}
+\alias{Plot3d.formula}
 \title{
-Plot points in 3D
+Plot3d generates a 3-dimensional plot using the package \code{rgl}.
+%%   ~~ data name/kind ... ~~
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Plot3d generates a 3-dimensional plot of points using the package \code{rgl}.
+A grid of points for the x and z variables and an optional factor variable
+is kept as an object in order to
+allowing plotting fitted surfaces that are functions of the x and z variables and the
+optional factor.
+%%  ~~ A concise (1-5 lines) description of the dataset. ~~
 }
 \usage{
-Plot3d(x, y, z, ...)
+
+## S3 method for class 'formula'
+
+Plot3d(formula = attr(data, "formula"),
+    data = sys.parent(),
+    groups = NULL,
+    subset = NULL,
+    xlab = names(dd)[2],
+    ylab = names(dd)[1],
+    zlab = names(dd)[3],
+    verbose = 0,
+    col = c("blue", "green", "orange", "magenta", "cyan", "red", "yellow", "gray"),
+    surface = FALSE,
+    fit = "smooth",
+    surface.col = col,
+    lines.col = "gray",
+    lines.lwd = 1,
+    ...)
+
+## S3 method for class 'lm'
+
+  Plot3d(fit, ...)
+
+## S3 default method
+
+  Plot3d(x, y, z, xlab, ylab, zlab, groups = NULL, ...)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
-%%     ~~Describe \code{x} here~~
+  \item{formula}{ a two sided formula of the form \code{y ~ x + z | [g] } where
+  \code{y} is the variable plotted on the vertical axis, \code{x} is plotted on
+  the horizontal axis and \code{z} is plotted along the axis coming out of the
+  screen. \code{g} is interpreted as a factor and the index of its levels is
+  used to select the value of \code{col} used.
+%%     ~~Describe \code{formula} here~~
 }
-  \item{y}{
-%%     ~~Describe \code{y} here~~
+  \item{data}{
+  a data frame in which \code{formula} is evaluated.
+%%     ~~Describe \code{data} here~~
 }
-  \item{z}{
-%%     ~~Describe \code{z} here~~
+  \item{groups}{ a variable used
+   to join points belonging to the same group by lines
+%%     ~~Describe \code{groups} here~~
+}
+  \item{subset}{  is a condition to select a subset of
+  \code{data}.
+%%     ~~Describe \code{subset} here~~
+}
+  \item{xlab, ylab, zlab}{
+  labels for respective axes
+%%     ~~Describe \code{xlab} here~~
+}
+  \item{verbose}{
+%%     ~~Describe \code{verbose} here~~
+}
+  \item{col}{
+%%     ~~Describe \code{col} here~~
+}
+  \item{surface}{
+%%     ~~Describe \code{surface} here~~
+}
+  \item{fit}{
+%%     ~~Describe \code{fit} here~~
+}
+  \item{surface.col}{
+%%     ~~Describe \code{surface.col} here~~
+}
+  \item{lines.col}{
+%%     ~~Describe \code{lines.col} here~~
+}
+  \item{lines.lwd}{
+%%     ~~Describe \code{lines.lwd} here~~
 }
   \item{\dots}{
 %%     ~~Describe \code{\dots} here~~
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+%%  ~~ If necessary, more details than the __description__ above ~~
 }
-\value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+\source{
+%%  ~~ reference to a publication or URL from which the data were obtained ~~
 }
 \references{
-%% ~put references to the literature/web site here ~
-}
-\author{
-Georges Monette
-}
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+%%  ~~ possibly secondary sources and usages ~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
 
-## The function is currently defined as
-function( x, y, z, ...) {
-'
-    Help summary:
-    Plot3d ( y ~ x + z [ |g ], data, groups = id,
-        sphere.size = 1,
-        xlim,   # across screen
-        ylim,   # vertical
-        zlim,   # into screen
-        xlab,
-        ylab,
-        zlab,
-        xtend = .05, # axes extend beyond range of data
-        debug = T,
-        revolutions = 0,
-        bg.col = c("white", "black"),
-        axis.col = if (bg.col == "white") "black" else "white",
-        surface.col = c("blue", "green", "orange", "magenta", "cyan", "red", "yellow", "gray"),
-        neg.res.col = "red",
-        pos.res.col = "green",
-        point.col = "yellow",
-        text.col = axis.col,
-        grid.col = if (bg.col == "white") "black" else "gray",
-        fogtype = c("none","exp2", "linear", "exp"),
-        residuals = (length(fit) == 1),
-        surface=FALSE,
-        fill=TRUE,
-        grid=TRUE,
-        grid.lines=26,
-        df.smooth=NULL,
-        df.additive=NULL,
-        threshold=0.01,
-        speed=1,
-        fov=30,
-        fit="linear",
-        groups=NULL,
-        parallel=TRUE,
-        ellipsoid=FALSE,  # data ellipsoid within
-        level=0.5,
-        model.summary=FALSE,
-        verbose = 0,
-        clear = T,
-        pow = -1,
-        origin = F,
-        axes = T,
-        lines.col = "gray",
-        lines.lwd= 1)
-'
-    UseMethod("Plot3d")
-  }
+    library(p3d)
+    data(Smoking)
+    head(Smoking)
+    rownames(Smoking) = Smoking$Country
+
+    Init3d(family = 'serif', cex = 1.5)
+    Plot3d( LE ~ CigCon + HealthExpPC | Continent, Smoking)
+    Axes3d()
+    Identify3d(pad=1)
+
+
+    fit = lm( LE ~ CigCon + log(HealthExpPC) +I(CigCon^2) + I(log(HealthExpPC)^2) + I(CigCon*log(HealthExpPC)), Smoking)
+    Fit3d( fit )
+    fitl <- lm( LE ~ CigCon + HealthExpPC, Smoking)
+    Fit3d( fitl, col = 'pink')
+# HEpCap is highly 'skewed': dense on left, long tail on right
+    require( lattice )
+    densityplot( Smoking$HealthExpPC )
+
+# Useful to use a transformation to make spread more even
+#  e.g. log
+# First make sure all values are positive:
+
+    sort( Smoking$HealthExpPC)
+
+# Do log transformation:
+
+    Smoking$LogHE <- log(Smoking$HealthExpPC)    # create log HE
+
+    densityplot( Smoking$LogHE )
+
+# Also usefult to have categories:
+
+    Smoking$HECat <- cut(Smoking$LogHE, 7)       # create categories
+    summary(Smoking)
+
+    Plot3d( LE ~ CigCon + LogHE |HECat, Smoking )  # condition on level of HEpC
+    Axes3d()
+    Ell3d()
+    Identify3d(pad=1)
+
+# Simple regression
+
+    fit.lin <- lm( LE ~ CigCon, Smoking)
+    Fit3d( fit.lin )
+    fit.lin2 <- lm(LE ~ CigCon, subset(Smoking, Continent != "Africa"))
+    Fit3d( fit.lin2)
+    Pop3d(4)
+
+# Use multiple regression (advanced version with quadratic surface)
+
+    fit = lm( LE ~ CigCon + I(LogHE^2) +I(CigCon^2) + I(LogHE^2) + I(CigCon*LogHE), Smoking)
+    Fit3d( fit, col = 'red' )
+    Pop3d(2)
+
+# refit omitting Africa:
+
+    fit.na = lm( LE ~ CigCon + I(LogHE^2) +I(CigCon^2) + I(LogHE^2)
+               + I(CigCon*LogHE), Smoking, subset = Continent != "Africa")
+    Fit3d( fit.na, col = 'red' )
+
+# Marginal relationship
+
+    Pop3d(4)    # pop twice for each fit
+    fit.quad <- lm( LE ~ CigCon + I(CigCon^2) , Smoking)
+    Fit3d( fit.quad, col = 'green')
+
+#  A quadratic surface within each Continent (overfitting?!)
+
+    fit2 = lm( LE ~ Continent*(CigCon + HealthExpPC +I(CigCon^2) +
+            I(HealthExpPC^2) + I(CigCon*HealthExpPC)), Smoking)
+    Fit3d( fit2 )
+
+## maybe str(Plot3d) ; plot(Plot3d) ...
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{datasets}
