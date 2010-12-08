@@ -6,13 +6,14 @@ function( inc.theta = 1/4, inc.phi = 0, theta = NULL, phi = NULL) {
     BUG: - Respects some mouse motions but behaves unpredictably.
          - Should have a better way to stop
  "
+  cat("\nUse ESC in R window to stop spinning\n")
       um <- par3d('userMatrix')
       Acos = function(x) 360*acos(x)/(2*pi)
       Asin = function(x) 360*asin(x)/(2*pi)
       Atan2 = function( s, c) atan2( s, c)*(180/pi)
       theta.phi = function( ) {
 
-          par3d()
+          par3d()  # it may be necessary to call par3d first to get the right values on the next call
           um = par3d('userMatrix')
           list(theta = Atan2(-um[1,3], um[1,1]), phi = Atan2 (um[3,2],um[2,2]))
       }

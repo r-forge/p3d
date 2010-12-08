@@ -11,7 +11,7 @@ Ell3d.default <- function( x,  radius = 1, col,
         levels(x)
     else unique(x)
     if (missing(x)) {  # use displayed data
-    pars <- .Plot3d.par
+    pars <- Plot3d.par()
     if (missing(col))
         col <- pars$col
     if (verbose > 1)

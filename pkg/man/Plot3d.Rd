@@ -176,6 +176,13 @@ Plot3d(formula = attr(data, "formula"),
             I(HealthExpPC^2) + I(CigCon*HealthExpPC)), Smoking)
     Fit3d( fit2 )
 
-## maybe str(Plot3d) ; plot(Plot3d) ...
+#  For a 2D view of the y versus x
+
+    view3d(0,0,0)   # note the first parameter, theta, rotates clockwise in the vertical axis
+                    # from the initial position given by view3d(0,0,0); the second
+                    # parameter, phi, tilts the graph around a horizontal screen axis
+                    # towards the viewer.  The third parameter, fov, affects the
+                    # amount of 'perspective'. fov = 0 yields an orthographic
+                    # projection
 }
 \keyword{datasets}

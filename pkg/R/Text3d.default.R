@@ -1,3 +1,5 @@
 Text3d.default <-
-function(...) do.call("rgl.texts", args3d(...))
-
+function(...,col='blue'){
+# disp( list(...,col=col))
+ do.call("rgl.texts", args3d(...,col=col))
+}

@@ -48,22 +48,38 @@ if (help ) cat('
 ') else UseMethod("Plot3d")
 }
 
-   Plot3d.par <-
-function(..., default = FALSE ) {
-    if( default ) assign(".Plot3d.par",
-        list(),    # default
-        pos = 1)
-   # if ( exists(".tt") ) pars <- .tt
-   if ( exists(".Plot3d.par") ) pars <- .Plot3d.par
-    else pars <- list()
-     #    disp(pars)
-    if (length( a <- list(...)) == 0) return(pars)
-    if (is.null(names(a))) return( pars[unlist(a)] )
-    old <- pars[names(a)]
-    pars[names(a)] <- a
-    assign(".Plot3d.par", pars, pos = 1)
-    old
-}
+
+
+Plot3d.par <- function(..., new = FALSE){
+   # A new version (2010-11-30) of Plot3d.par
+   # that maintains separate lists for each rgl window allowing
+   # the selection of different windows
+
+  a <- list(...)
+  #disp( environment())
+  #if ( is.null(names(a))) disp(a)
+  #else disp(names(a))
+
+  pos <- rgl.cur()
+
+  if ( !exists(".Plot3d.par",1) || pos ==0) .Plot3d.par <<- list()  # initialize
+  if( pos == 0) pos <- 1
+  if ( new ) .Plot3d.par[[pos]] <<- list()
+  if ( length( .Plot3d.par ) < pos) .Plot3d.par[[pos]] <<- list()
+  if ( length(a) == 0) return( .Plot3d.par[[pos]])
+  if ( !is.null(names(a))) {
+
+   .Plot3d.par[[pos]][names(a)] <<- a
+  ret <- .Plot3d.par[[pos]]
+   }
+   else {
+  ret <- .Plot3d.par[[pos]][[unlist(a)]]
+   }
+ ret
+ }
+
+
+
 
 Plot3d.lm <-
 function( fit , ...) {
@@ -71,6 +87,7 @@ function( fit , ...) {
     Fit3d( fit)
 }
 
+## This is the S3 method that is used for plotting, i.e. it is called by Plot3d.default
 Plot3d.formula <-
 function( formula = attr(data, "formula"),
             data = sys.parent() ,
@@ -87,11 +104,15 @@ function( formula = attr(data, "formula"),
             theta = 0,       # arguments for view3d
             phi = 15,
             zoom = 1,
-            fov = 30,
+            fov = 15,
+#            keep.view = missing(phi) && missing(theta) && missing(zoom) && missing(fov),
+            keep.view = F,
             ...) {
 
 # BUG: subset and groups might not work together
 
+    par3d()  # seems more reliable if called first??
+    p <- par3d()
     Levels <- function( x ) if (is.factor(x)) levels(x) else unique(x)
     env <- environment(formula)
     subset <- eval( substitute(subset), data, env)
@@ -109,7 +130,7 @@ function( formula = attr(data, "formula"),
     if ( ncol(dd) == 3) {
         nams <- names(dd)
         names(nams) <- c('y','x','z')
-        Plot3d.par( data = dd, names=nams, has.groups = FALSE, col=col)
+        Plot3d.par( data = dd, names=nams, has.groups = FALSE, col=col, new = T)
         if ( verbose > 1 ) disp( Plot3d.par() )
         scat3d( dd[[2]], dd[[1]], dd[[3]],
             xlab , ylab, zlab,
@@ -127,16 +148,18 @@ function( formula = attr(data, "formula"),
         if( verbose) disp(ncol(dd))
         nams <- names(dd)
         names(nams) <- c('y','x','z','g')
-        Plot3d.par( data = dd, names=nams, has.groups = TRUE, col=col)
+        Plot3d.par( data = dd, names=nams, has.groups = TRUE, col=col, new = T)
         if ( verbose > 1 ) disp( Plot3d.par() )
         scat3d( dd[[2]], dd[[1]], dd[[3]],
             xlab, ylab, zlab, groups = dd[[4]],
             surface = surface,
             fit = fit,
             surface.col = col, ...)
-        if ( verbose >= 0 ) {
+        if ( verbose > 0 ) {
             pp <- Plot3d.par()
             cats <- data.frame(x=Levels(pp$data[[pp$names['g']]]))
+            disp(cats)
+            disp(col)
             cats$col <- col[1:length(cats$x)]
             names(cats)[1] <- pp$names['g']
             print(cats)
@@ -150,8 +173,24 @@ function( formula = attr(data, "formula"),
                   lwd = lines.lwd)
          })
     }
-    view3d( theta =theta, phi = phi, fov = fov, zoom = zoom)
+    if ( verbose > 0 ) disp( 'Plot3d -1')
+    if ( verbose > 0 )  disp( par3d('scale'))
+    if (keep.view) {
+      Acos <- function(x) 360*acos(x)/(2*pi)
+      Asin <- function(x) 360*asin(x)/(2*pi)
+      Atan2 <- function( s, c) atan2( s, c)*(180/pi)
+      um <- p$userMatrix
 
+      theta <- Atan2(-um[1,3], um[1,1])
+      phi <-  Atan2 (um[3,2],um[2,2])
+      view3d(theta = theta, phi = phi, fov = p$FOV, zoom = p$zoom,
+        scale = p$scale)
+    }   else {
+    view3d( theta = theta, phi = phi, fov = fov, zoom = zoom )
+    if ( verbose > 0 )   disp( 'Plot3d in else')
+    if ( verbose > 0 ) disp( par3d('scale'))
+    }
+    cat("\nUse left mouse to rotate, middle mouse (or scroll) to zoom, right mouse to change perspective\n")
 }
 
 Plot3d.default <-

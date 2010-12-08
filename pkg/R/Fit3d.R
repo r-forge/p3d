@@ -40,7 +40,7 @@ function( fit, names.vars = pars$names,
     
     Levels <- function( x ) if (is.factor(x)) levels(x) else unique(x)
 
-    pars <- .Plot3d.par
+    pars <- Plot3d.par()
     if ( missing(col)) col <- pars$col
     if ( verbose > 1) disp(col)
     if ( verbose > 1) disp(mod.vars)
@@ -85,7 +85,7 @@ function( fit, names.vars = pars$names,
                                     front="lines", back="lines",...)
     }
     if (residuals ){  
-        mf <- .Plot3d.par$data
+        mf <- pars$data
         fitted <- PP( fit, newdata = mf )
         yy <- mf[[ names.vars['y'] ]]
         xx <- mf[[ names.vars['x'] ]]

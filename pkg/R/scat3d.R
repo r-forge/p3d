@@ -94,26 +94,34 @@ function(x, y, z, xlab=deparse(substitute(x)), ylab=deparse(substitute(y)),
              if ( "y" %in% origin ) axy[1] <- 0
              if ( "z" %in% origin ) axz[1] <- 0
         }
+        if(axes){
+            rgl.lines( axx[ c(1,2) ], axy[ c(1,1) ] , axz [ c(1,1) ], color = axis.col)  # x
+            rgl.lines( axx[ c(1,1) ], axy[ c(1,2) ] , axz [ c(1,1) ], color = axis.col)  # y
+            rgl.lines( axx[ c(1,1) ], axy[ c(1,1) ] , axz [ c(1,2) ], color = axis.col)  # z
 
-        rgl.lines( axx[ c(1,2) ], axy[ c(1,1) ] , axz [ c(1,1) ], color = axis.col)  # x
-        rgl.lines( axx[ c(1,1) ], axy[ c(1,2) ] , axz [ c(1,1) ], color = axis.col)  # y
-        rgl.lines( axx[ c(1,1) ], axy[ c(1,1) ] , axz [ c(1,2) ], color = axis.col)  # z
-       
-        # rgl.texts(1, 0, 0, xlab, adj=1, color=text.col)
-        # rgl.texts(0, 1, 0, ylab, adj=1, color=text.col)
-        # rgl.texts(0, 0, 1, zlab, adj=1, color=text.col)
+            # rgl.texts(1, 0, 0, xlab, adj=1, color=text.col)
+            # rgl.texts(0, 1, 0, ylab, adj=1, color=text.col)
+            # rgl.texts(0, 0, 1, zlab, adj=1, color=text.col)
 
 
-        rgl.texts(axx[2], axy[1], axz[1] , xlab, adj=1, color=text.col)
-        rgl.texts(axx[1], axy[2], axz[1] , ylab, adj=1, color=text.col)
-        rgl.texts(axx[1], axy[1], axz[2] , zlab, adj=1, color=text.col)
-				
+            rgl.texts(axx[2], axy[1], axz[1] , xlab, adj=1, color=text.col)
+            rgl.texts(axx[1], axy[2], axz[1] , ylab, adj=1, color=text.col)
+            rgl.texts(axx[1], axy[1], axz[2] , zlab, adj=1, color=text.col)
+        }
         scale <-  1/c( diff(range(c(axx,xlim))), diff(range(c(axy,ylim))), diff(range(c(axz,zlim))))
         scale[is.na(scale)] <- max( scale, na.rm = TRUE)
         scale <- scale / mean(scale)
-        disp( scale )
+        if( verbose) disp( scale )
         par3d( scale =  scale)
+        
+        # disp("Point 1")
+        # disp(scale)
+        # disp(par3d('scale'))
+
+        Plot3d.par( scale = scale)
 				par3d( zoom = 4*min(scale,na.rm=TRUE))        # need to improve zoom and fov
+				Plot3d.par( zoom = 4*min(scale,na.rm=TRUE))
+
         Plot3d.par( abox = c( axx, axy, axz))
 
         ##
@@ -300,6 +308,9 @@ function(x, y, z, xlab=deparse(substitute(x)), ylab=deparse(substitute(y)),
             for (angle in seq(1, 360, length=360/speed)) rgl.viewpoint(-angle, fov=fov)
             }
         }
+    if( verbose) disp( par3d())
+    #disp("end of scat3d")
+    #disp(par3d("scale"))
     if (model.summary) return(summaries) else return(invisible(NULL))
     }
 

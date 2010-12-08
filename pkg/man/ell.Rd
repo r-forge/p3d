@@ -1,28 +1,66 @@
 \name{ell}
 \Rdversion{1.1}
 \alias{ell}
+\alias{dell}
+\alias{ellplus}
+\alias{elltan}
+\alias{elltanc}
+\alias{ellpt}
+\alias{ellptc}
+\alias{ellbox}
+\alias{cell}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Ellipse in 2D
+Ellipses in 2D
 }
 \description{
+Tools to generate 2D data, concentration and confidence ellipses given a center and a 'variance' matrix. Also tools
+to generate points on a ellipse in a given direction or conjugate to that direction, axes
+along a vector or conjugate to it, tangent lines at a point or parallel to a vector.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-ell(center, shape, radius = 1, n = 100)
+
+ell( center, shape, radius = 1, n = 100)
+
+dell( x, y, radius = 1, n = 100)
+
+ellpt( ell, dir = c(0,1) , radius = 1 )
+
+ellptc( ell, dir = c(0,1) , radius = 1 )
+
+elltan( ell, dir = c(0,1) , radius = 1 , len = 1, v= c(-1,1))
+
+ellptanc( ell, dir = c(0,1) , radius = 1 , len = 1, v= c(-1,1))
+
+ellbox( ell, dir = c(0,1) , radius = 1 )
+
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{center}{
+  \item{center}{  the center of the ellipse
 %%     ~~Describe \code{center} here~~
 }
-  \item{shape}{
+  \item{shape}{   a 2 x 2 positive semi-definite. It is the variance matrix of a multivariate normal for which the ellipse is a concentration ellipse.
 %%     ~~Describe \code{shape} here~~
 }
-  \item{radius}{
+  \item{radius}{ of the ellipse or point relative to the unit ellipse. For all functions except those generating tangents \code{radius} can be a vector.
+  For example, \code{ ellpt( ell, c(0,1), radius = c(-1,1))} will generate an axis of the unit ellipse.
 %%     ~~Describe \code{radius} here~~
 }
-  \item{n}{
+  \item{n}{  number of points to generate for the ellipse
+%%     ~~Describe \code{n} here~~
+}
+  \item{ell}{  is an object of class \code{ell} created by \code{ell}, \code{dell} or \code{cell}
+%%     ~~Describe \code{n} here~~
+}
+  \item{dir}{  vector giving the direction from the center of the ellipse to find a point on the ellipse or a tangent to it, or a direction conjugate to the direction in which ...
+%%     ~~Describe \code{n} here~~
+}
+  \item{len}{  half 'length' of a tangent vector
+%%     ~~Describe \code{n} here~~
+}
+  \item{v}{  number of points to generate for the ellipse
 %%     ~~Describe \code{n} here~~
 }
 }
@@ -30,6 +68,9 @@ ell(center, shape, radius = 1, n = 100)
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
+The functions \code{ell} and \code{dell} return an object of class \code{ell} consisting of
+matrix whose rows are points on the ellipse and, thus, can be plotted with \code{plot} or \code{lines}.
+The other functions return a n x 2 matrix of points to plotted.
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
@@ -56,26 +97,8 @@ Georges Monette
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
 
-## The function is currently defined as
-function( center, shape , radius  = 1, n =100) {
-          fac <- function( x )  {
-              # fac(M) is a 'right factor' of a positive semidefinite M
-              # i.e. M = t( fac(M) ) \%*\% fac(M)
-              # similar to chol(M) but does not require M to be PD.
-              xx <- svd(x)
-          t(xx$v) * sqrt(pmax( xx$d,0))
-          }
-         angles = (0:n) * 2 * pi/n
-         if ( length(radius) > 1) {
-            ret <- lapply( radius, function(r) rbind(r*cbind( cos(angles), sin(angles)),NA))
-            circle <- do.call( rbind, ret)
-         }
-         else circle = radius * cbind( cos(angles), sin(angles))
-         ret <- t( c(center) + t( circle \%*\% fac(shape)))
-         attr(ret,"parms") <- list ( center = rbind( center), shape = shape, radius = radius)
-         class(ret) <- "ell"
-         ret
-    }
+  plot( e1 <- ell(c(1,1), matrix(c(1,.6,.6,1), ncol = 2)) )
+  ellptc ( e1, radius = c(-1,1))
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

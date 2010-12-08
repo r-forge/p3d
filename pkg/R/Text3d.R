@@ -1,5 +1,5 @@
 Text3d <-
-function( obj, ...) {
+function( obj, ..., col = "blue") {
     # Note that this is the 'same' as Lines3d
     "
     Text3d allows arguments to be vectors or matrices whose corresponding
