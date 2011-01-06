@@ -155,11 +155,11 @@ function( formula = attr(data, "formula"),
             surface = surface,
             fit = fit,
             surface.col = col, ...)
-        if ( verbose > 0 ) {
+        if ( verbose > -1 ) {
             pp <- Plot3d.par()
             cats <- data.frame(x=Levels(pp$data[[pp$names['g']]]))
-            disp(cats)
-            disp(col)
+            #disp(cats)
+            #disp(col)
             cats$col <- col[1:length(cats$x)]
             names(cats)[1] <- pp$names['g']
             print(cats)
