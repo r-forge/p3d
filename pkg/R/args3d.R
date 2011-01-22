@@ -13,23 +13,31 @@ help <- "
          x
     }
     args <- list(...)
-    
+    #disp(args)
     getdim <- function(nam, args){
-        pos <- regexpr(nam, names(args)) 
+        pos <- regexpr(nam, names(args))
+        #disp(nam)
+        #disp(pos)
         arg.ind <- pos > 0
+        #disp(arg.ind)
         if( length(pos <- pos [ pos > 0 ])==0) return(0)
+        #disp( args[arg.ind] )
+        #disp(cbind( args[arg.ind][[1]]))
+        #disp(pos)
+
+        #disp(cbind( args[arg.ind][[1]])[,pos])
         cbind( args[arg.ind][[1]])[,pos]
     }
     
     if( is.null(names(args))) names(args) <- rep("",length(args) )
     nn <- names(args)
 		#disp(nn)
-        if ( (length(nn) >2) && all( nn[1:3] =="")) names(args) [1:3] <- c('x','y','z')
-        nn <- names(args)
-        if ( (length(nn) > 0) && (nn[1] == "") ){
-						 names(args)[1] <- 'xyz'
-						 args[[1]] = rbind( args[[1]])	
-				}
+    if ( (length(nn) >2) && all( nn[1:3] =="")) names(args) [1:3] <- c('x','y','z')
+    nn <- names(args)
+    if ( (length(nn) > 0) && (nn[1] == "") ){
+			 names(args)[1] <- 'xyz'
+			 args[[1]] = rbind( args[[1]])
+		}
         nn <- names(args)
         #disp(nn)
     nxyz <- sapply( nn, regexpr, "xyzyxzxzyyzxzxyzyz")
@@ -51,6 +59,7 @@ help <- "
         mode(xyz) <- "numeric"
     }
     a <- list(x = xyz)
+    #disp(c(a,oargs))
     c(a,oargs)
 }
 

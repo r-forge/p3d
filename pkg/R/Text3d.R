@@ -1,3 +1,4 @@
+
 Text3d <-
 function( obj, ..., col = "blue") {
     # Note that this is the 'same' as Lines3d
@@ -10,3 +11,8 @@ function( obj, ..., col = "blue") {
     UseMethod("Text3d")
 }
 
+Text3d.default <-
+function(...,col='blue'){
+# disp( list(...,col=col))
+ do.call("rgl.texts", args3d(...,col=col))
+}
