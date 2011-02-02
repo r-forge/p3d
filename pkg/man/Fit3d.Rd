@@ -112,6 +112,7 @@ Georges Monette
 \code{\link{Plot3d}}
 }
 \examples{
+\dontrun{
  library(car)
  data(Prestige)
  Prestige$inc <- Prestige$income / 1000
@@ -120,6 +121,7 @@ Georges Monette
  
  Fit3d ( lm(inc ~ women + education,Prestige))
  Fit3d ( lm(inc ~ women * education,Prestige), col="pink")
+}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

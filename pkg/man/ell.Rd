@@ -93,12 +93,14 @@ Georges Monette
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
+\dontrun{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
 
   plot( e1 <- ell(c(1,1), matrix(c(1,.6,.6,1), ncol = 2)) )
   ellptc ( e1, radius = c(-1,1))
+}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

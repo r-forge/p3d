@@ -102,7 +102,7 @@ Plot3d(formula = attr(data, "formula"),
 %%  ~~ possibly secondary sources and usages ~~
 }
 \examples{
-
+\dontrun{
     library(p3d)
     data(Smoking)
     head(Smoking)
@@ -184,5 +184,6 @@ Plot3d(formula = attr(data, "formula"),
                     # towards the viewer.  The third parameter, fov, affects the
                     # amount of 'perspective'. fov = 0 yields an orthographic
                     # projection
+}
 }
 \keyword{datasets}

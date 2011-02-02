@@ -7,6 +7,6 @@ Author: G. Monette using a lot of material from John Fox using rgl
 Maintainer: Georges Monette <georges@yorku.ca>
 Description: p3d simplifies plotting data and fitted surfaces for models that are functionally defined by two continuous variables or by two continuous variables and one categorical variable. 
 License: GPL-2
-Depends: rgl, car
+Depends: rgl, car, mgcv
 LazyLoad: yes
 LazyData: yes

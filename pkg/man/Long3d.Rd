@@ -58,6 +58,7 @@ Georges Monette
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
+\dontrun{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
@@ -83,6 +84,7 @@ function( fmla, data, id, ..., col.lines = 'grey', lwd.lines = 1) {
         )
         invisible(NULL)    
     }
+}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

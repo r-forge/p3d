@@ -66,7 +66,7 @@ Georges Monette
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
-
+\dontrun{
 library(p3d)
 library(car)
 
@@ -81,6 +81,7 @@ function( center = rep(0,3), shape = diag(3), radius = 1, n = 30, render = 'wire
       if ( render == 'wire' ) wire3d( ellip, ...)
       else shade3d( ellip, ...)
   }
+}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

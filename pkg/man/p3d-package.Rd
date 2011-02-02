@@ -42,6 +42,7 @@ Maintainer: Georges Monette <georges@yorku.ca>
 \code{\link[rgl:rgl-package]{rgl}}
 }
 \examples{
+\dontrun{
   library(p3d)
   library(car)
 
@@ -55,7 +56,7 @@ Maintainer: Georges Monette <georges@yorku.ca>
   fit2 <- lm( women ~ education + prestige, Prestige)
   Fit3d( fit2, col = 'red')
   Ell3d()
-
+}
 }
 \section{Changes}{
 Lines3d.default: 2009-05-09: disabled line changing 'lwd' to 'size' since 'segments3d' uses 'lwd'.
