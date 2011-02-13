@@ -6,35 +6,37 @@
 Add ellipsoid(s) to a 3D plot
 }
 \description{
-Adds data ellipsoids(s) to a 3D plot using the data frame
+Adds data ellipsoids(s) to a 3D plot using, by default, the data frame
 for the plot.
 %So far, Ell3d() will only draw data ellipsoids around displayed data.
-
 \bold{Note:} The argument list of Ell3d has changed.  This documentation
 should be regenerated and revised.
 }
 \usage{
 Ell3d()
+Ell3d(subset(data, w > 1000))
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{center}{
+  \item{x}{
+    optional matrix or data frame used to generate a data ellipsoid.
 %%     ~~Describe \code{center} here~~
 }
-  \item{shape}{
+  \item{col}{
+    color for ellipsoid, by default: Plot3d.par()$col.
 %%     ~~Describe \code{shape} here~~
 }
-  \item{radius}{
+  \item{radius}{  of the ellipsoid (1 generates the standard ellipsoid whose
+  one dimensional projections yield the mean plus or minus one standard deviation
+  of the variable projected.
 %%     ~~Describe \code{radius} here~~
 }
-  \item{n}{
+  \item{use.groups}{ defaults to Plot3d.par()has.groups: whether to plot one ellipsoid for
+  all the data or separate ellipsoids for each subgroup.
 %%     ~~Describe \code{n} here~~
 }
-  \item{render}{
+  \item{alpha}{ default 0.5. Controls transparency of ellipsoid.
 %%     ~~Describe \code{render} here~~
-}
-  \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
 }
 }
 \details{
@@ -73,14 +75,8 @@ library(car)
 Init3d()
 Plot3d( women ~ education + prestige | type, Prestige)
 Ell3d()
+Ell3d( subset(Prestige, income > 5000), col = 'pink', alpha = .3)
 
-
-## The function is currently defined as
-function( center = rep(0,3), shape = diag(3), radius = 1, n = 30, render = 'wire', ...) {
-      ellip <- ellipsoid( center = center, shape = shape, radius = radius, n = n)
-      if ( render == 'wire' ) wire3d( ellip, ...)
-      else shade3d( ellip, ...)
-  }
 }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
