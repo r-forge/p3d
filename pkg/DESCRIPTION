@@ -1,8 +1,8 @@
 Package: p3d
 Type: Package
 Title: Plot 3d data and fitted surfaces
-Version: 0.02-1
-Date: 2009-06-14
+Version: 0.02-2
+Date: 2011-05-27
 Author: G. Monette using a lot of material from John Fox using rgl
 Maintainer: Georges Monette <georges@yorku.ca>
 Description: p3d simplifies plotting data and fitted surfaces for models that are functionally defined by two continuous variables or by two continuous variables and one categorical variable. 

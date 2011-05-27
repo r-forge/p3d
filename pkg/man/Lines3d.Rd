@@ -34,34 +34,29 @@ Lines3d(obj, ..., col = "blue")
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+%\references{
+%%% ~put references to the literature/web site here ~
+%}
 \author{
 Georges Monette
 }
-\note{
-%%  ~~further notes~~
-}
+%\note{
+%%%  ~~further notes~~
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{Plot3d}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function( obj, ..., col = 'blue') {
-    "
-    Lines3d allows arguments to be vectors or matrices whose corresponding
-    axes as specified with names of the form 'x', 'xy', 'yxz', etc.
-    "
-    UseMethod("Lines3d")
-  }
+require(car)
+Plot3d( prestige ~ education + income, Prestige, col="blue")
+data.Ell3d()
+# marginal ellipses
+Lines3d( y = 'min', xz = with( Prestige, dell( education, income)), lwd=2)
+Lines3d( z = 'min', xy = with( Prestige, dell( education, prestige)), lwd=2)
+Lines3d( x = 'min', yz = with( Prestige, dell( prestige, income)), lwd=2)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

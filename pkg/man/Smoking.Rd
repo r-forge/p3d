@@ -18,7 +18,7 @@ Data on smoking and life expectancy in 192 countries
     \item{\code{LE.q}}{Cigarette consumption, a factor with levels \code{(28.6,40.2]} \code{(40.2,51.8]} \code{(51.8,63.4]} \code{(63.4,75]}}
     \item{\code{Cont}}{short labels for Continent, a factor with levels \code{Afrc} \code{Asia} \code{Astr} \code{Eurp} \code{NrtA} \code{SthA}}
     \item{\code{Cont2}}{short labels for Continent, a factor with levels \code{Africa} \code{Asia} \code{Australia} \code{Europe} \code{N.America} \code{S.America}}
-    \item{\code{HealthExpPC}}{Health, a numeric vector}
+    \item{\code{HealthExpPC}}{Health expenditure per capita, a numeric vector}
     \item{\code{Year}}{Year of data, a numeric vector}
     \item{\code{HE}}{Health, a factor with levels \code{(152,476]} \code{(31.1,152]} \code{(476,6.1e+03]} \code{[0.3,31.1]}}
   }
@@ -34,6 +34,10 @@ Data on smoking and life expectancy in 192 countries
 %}
 \examples{
 data(Smoking)
-str(Smoking) 
+str(Smoking)
+fit1 <- lm( LE ~ CigCon, Smoking)
+fit2 <- lm( LE ~ CigCon + HealthExpPC, Smoking)
+summary(fit2) 
+anova(fit1,fit2)
 }
 \keyword{datasets}
