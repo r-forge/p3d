@@ -6,7 +6,7 @@
 Data ellipse in 2D
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Calculates points on a 2D data ellipse
 }
 \usage{
 dell(x, y, radius = 1, ...)
@@ -14,37 +14,36 @@ dell(x, y, radius = 1, ...)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-%%     ~~Describe \code{x} here~~
+A numeric vector, or a two-column matrix, or a data.frame
 }
   \item{y}{
+A numeric vector
 %%     ~~Describe \code{y} here~~
 }
   \item{radius}{
-%%     ~~Describe \code{radius} here~~
+Radius of the ellipse
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+Arguments passed to \code{ell}, including \code{n}, the number of points
+on the ellipse.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+%\details{
+%%%  ~~ If necessary, more details than the description above ~~
+%}
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
+\code{dell} returns an object of class \code{ell} consisting of a 
+matrix whose rows are points on the ellipse and, thus, can be plotted with \code{plot} or \code{lines}.
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+%\references{
+%%% ~put references to the literature/web site here ~
+%}
 \author{
 Georges Monette
 }
-\note{
-%%  ~~further notes~~
-}
+%\note{
+%%%  ~~further notes~~
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 

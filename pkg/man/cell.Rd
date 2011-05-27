@@ -17,13 +17,13 @@ It currently has methods for \code{lm} (\code{cell.default}) and \code{glh} obje
 \usage{
 cell(object, ...)
 
-\method{cell}{default}{object, which.coef, levels = 0.95, Scheffe = FALSE, dfn = 2, center.pch = 19, 
+\method{cell}{default}(object, which.coef, levels = 0.95, Scheffe = FALSE, dfn = 2, center.pch = 19, 
 center.cex = 1.5, segments = 51, xlab, ylab, las = par("las"), col = palette()[2], lwd = 2, lty = 1, 
-add = FALSE, ...}
+add = FALSE, ...)
 
-\method{cell}{glh}{object, which.coef = 1:2, levels = 0.95, Scheffe = FALSE, dfn = 2, center.pch = 19, 
+\method{cell}{glh}(object, which.coef = 1:2, levels = 0.95, Scheffe = FALSE, dfn = 2, center.pch = 19, 
 center.cex = 1.5, segments = 51, xlab, ylab, las = par("las"), col = palette()[2], lwd = 2, 
-lty = 1, add = FALSE, ...}
+lty = 1, add = FALSE, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -37,7 +37,7 @@ is to be constructed.
 One or more values of the confidence coverage of the ellipse(s).
 }
   \item{Scheffe}{
-%%     ~~Describe \code{Scheffe} here~~
+Whether to apply Scheffe correction for dimensionality of the hypothesis
 }
   \item{dfn}{
 The Scheffe dimension used to calculate the radii of the ellipse(s).
@@ -79,9 +79,9 @@ This argument is not presently used
 Other arguments passed down [where?]
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+%\details{
+%%%  ~~ If necessary, more details than the description above ~~
+%}
 \value{
 Returns an object of class \code{ell} representing points on the boundaries of
 the confidence ellipse(s).
@@ -103,21 +103,6 @@ Georges Monette
 
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function( ... )  {
-            UseMethod("cell")
-            help <- "
-            See help for car::confidence.ellipse.lm
-            except that 'cell' returns the points to form the ellipse
-            which must be plotted with plot(...,type='l') or lines(...)
-            -- Use dfn to determine Sheffe dimension, i.e. dfn = 1 to generate ordinary CIs, dfn = 2 for 2-dim CE, etc.
-            -- TODO: extend to 3 dimensions if which.coef has length 3
-            "
-    }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

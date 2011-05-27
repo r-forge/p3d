@@ -13,8 +13,10 @@ for the plot.
 should be regenerated and revised.
 }
 \usage{
-Ell3d()
-Ell3d(subset(data, w > 1000))
+Ell3d(x, ...)
+\method{Ell3d}{default}(x, radius = 1, col, alpha = 0.5, use.groups = pars$has.groups, 
+    verbose = 0, ...) 
+
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -29,19 +31,16 @@ Ell3d(subset(data, w > 1000))
   \item{radius}{  of the ellipsoid (1 generates the standard ellipsoid whose
   one dimensional projections yield the mean plus or minus one standard deviation
   of the variable projected.
-%%     ~~Describe \code{radius} here~~
 }
   \item{use.groups}{ defaults to Plot3d.par()has.groups: whether to plot one ellipsoid for
   all the data or separate ellipsoids for each subgroup.
-%%     ~~Describe \code{n} here~~
 }
-  \item{alpha}{ default 0.5. Controls transparency of ellipsoid.
-%%     ~~Describe \code{render} here~~
+  \item{alpha}{ default 0.5. Controls transparency of ellipsoid.}
+  \item{verbose}{be verbose?}
 }
-}
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+%\details{
+%%%  ~~ If necessary, more details than the description above ~~
+%}
 \value{
 %%  ~Describe the value returned
 %%  If it is a LIST, use
@@ -49,9 +48,9 @@ Ell3d(subset(data, w > 1000))
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+%\references{
+%%% ~put references to the literature/web site here ~
+%}
 \author{
 Georges Monette
 }
@@ -62,12 +61,9 @@ Georges Monette
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{Plot3d}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
 \dontrun{
 library(p3d)
 library(car)

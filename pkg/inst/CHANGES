@@ -11,6 +11,11 @@ Version 0.02-1 (11-28-2010) (GM)
 	o Added help files for Plot3d and Smoking
 	o Started fixing bugs with Plot3d
 
+Version 0.02-2 (05-27-2011) (MF)
+	o Added missing ellipsoid function
+	o Fix some documentation warnings
+	o Added help file for Smoking
+
 
 
  

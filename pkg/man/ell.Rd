@@ -1,10 +1,10 @@
 \name{ell}
 \Rdversion{1.1}
 \alias{ell}
-\alias{dell}
+%\alias{dell}
 \alias{ellplus}
 \alias{elltan}
-\alias{elltanc}
+\alias{ellptanc}
 \alias{ellpt}
 \alias{ellptc}
 \alias{ellbox}
@@ -23,7 +23,7 @@ along a vector or conjugate to it, tangent lines at a point or parallel to a vec
 
 ell( center, shape, radius = 1, n = 100)
 
-dell( x, y, radius = 1, n = 100)
+%dell( x, y, radius = 1, n = 100)
 
 ellpt( ell, dir = c(0,1) , radius = 1 )
 
@@ -39,28 +39,22 @@ ellbox( ell, dir = c(0,1) , radius = 1 )
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{center}{  the center of the ellipse
-%%     ~~Describe \code{center} here~~
 }
   \item{shape}{   a 2 x 2 positive semi-definite. It is the variance matrix of a multivariate normal for which the ellipse is a concentration ellipse.
-%%     ~~Describe \code{shape} here~~
 }
   \item{radius}{ of the ellipse or point relative to the unit ellipse. For all functions except those generating tangents \code{radius} can be a vector.
   For example, \code{ ellpt( ell, c(0,1), radius = c(-1,1))} will generate an axis of the unit ellipse.
-%%     ~~Describe \code{radius} here~~
 }
   \item{n}{  number of points to generate for the ellipse
 %%     ~~Describe \code{n} here~~
 }
   \item{ell}{  is an object of class \code{ell} created by \code{ell}, \code{dell} or \code{cell}
-%%     ~~Describe \code{n} here~~
 }
   \item{dir}{  vector giving the direction from the center of the ellipse to find a point on the ellipse or a tangent to it, or a direction conjugate to the direction in which ...
-%%     ~~Describe \code{n} here~~
 }
   \item{len}{  half 'length' of a tangent vector
-%%     ~~Describe \code{n} here~~
 }
-  \item{v}{  number of points to generate for the ellipse
+  \item{v}{  tangent vector
 %%     ~~Describe \code{n} here~~
 }
 }
@@ -71,26 +65,21 @@ ellbox( ell, dir = c(0,1) , radius = 1 )
 The functions \code{ell} and \code{dell} return an object of class \code{ell} consisting of
 matrix whose rows are points on the ellipse and, thus, can be plotted with \code{plot} or \code{lines}.
 The other functions return a n x 2 matrix of points to plotted.
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+%\references{
+%%% ~put references to the literature/web site here ~
+%}
 \author{
 Georges Monette
 }
-\note{
-%%  ~~further notes~~
-}
+%\note{
+%%%  ~~further notes~~
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{dell}}, ~~~
 }
 \examples{
 \dontrun{

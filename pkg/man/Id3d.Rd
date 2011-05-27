@@ -13,13 +13,12 @@ Drag a rectangle around an empty region to exit from point identification
 mode, or make the R console the active window and press \code{<ESC>}.
 }
 \usage{
-Id3d(labels = row.names(data), ...)
+Id3d(labels = row.names(data), pad, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{labels}{
-Observation labels
-}
+  \item{labels}{Observation labels}
+  \item{pad}{amount to pad labels}
   \item{\dots}{
 Other arguments, passed down
 }
@@ -46,25 +45,7 @@ Georges Monette
 \code{\link{Identify3d}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function(labels=row.names(data),...) {
-    pars <- .Plot3d.par
-    data <- pars$data
-    nams <- pars$names
-    if ( pars$has.groups ) {
-        Identify3d(
-            data[[nams['x']]],  data[[nams['y']]],data[[nams['z']]],
-            groups = data[[nams['g']]],labels=labels,...)
-    } else {
-        Identify3d(
-            data[[nams['x']]],  data[[nams['y']]],data[[nams['z']]],
-            labels=labels,...)
-    }
-  }
+# none
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

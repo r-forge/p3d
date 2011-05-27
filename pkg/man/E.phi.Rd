@@ -6,7 +6,7 @@
 Incline horizontal plane by phi degree
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Incline horizontal plane by phi degree
 }
 \usage{
 E.phi(phi)
@@ -14,7 +14,7 @@ E.phi(phi)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{phi}{
-%%     ~~Describe \code{phi} here~~
+     Angle
 }
 }
 \details{
@@ -27,15 +27,15 @@ E.phi(phi)
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+%\references{
+%%% ~put references to the literature/web site here ~
+%}
 \author{
 Georges Monette
 }
-\note{
-%%  ~~further notes~~
-}
+%\note{
+%%%  ~~further notes~~
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 

@@ -3,34 +3,32 @@
 \alias{Init3d}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Initialize rgl
+Initialize rgl for Plot3d and related functions
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Initialize rgl for Plot3d and related functions
 }
 \usage{
-Init3d(par3d = list(), family = c("sans", "serif", "mono", "symbol"), cex = 0.8, font = 1, ...)
+Init3d(par3d = list(), family = c("sans", "serif", "mono", "symbol"),  mouseMode = c("polar", "fov", "zoom"), cex = 0.8, font = 1, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{par3d}{
 %%     ~~Describe \code{par3d} here~~
 }
-  \item{family}{
-%%     ~~Describe \code{family} here~~
-}
+  \item{family}{Font family to be used in Plot3d plots}
+  \item{mouseMode}{Assignment to left, middle, right mouse buttons. default: \code{c("polar", "fov", "zoom")}}
   \item{cex}{
 %%     ~~Describe \code{cex} here~~
 }
   \item{font}{
 %%     ~~Describe \code{font} here~~
 }
-  \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
-}
+  \item{\dots}{Other arguments passed down}
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+\code{Init3d} calls \code{\link[rgl]{par3d}} to set up a variety of defaults
+for subsequent plots.
 }
 \value{
 %%  ~Describe the value returned
@@ -39,40 +37,24 @@ Init3d(par3d = list(), family = c("sans", "serif", "mono", "symbol"), cex = 0.8,
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+%\references{
+%%% ~put references to the literature/web site here ~
+%}
 \author{
 Georges Monette
 }
-\note{
-%%  ~~further notes~~
-}
+%\note{
+%%%  ~~further notes~~
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link[rgl]{par3d}}, 
+\code{\link{Plot3d}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function( par3d = list(),
-      family = c('sans','serif', "mono", "symbol"),
-      cex = .8,
-      font = 1,
-      ...) {
-    family = match.arg(family)
-    mod = list(family=family, cex = cex, font = font)
-    par3d [ names(mod)] <- mod
-    require(rgl)
-    require(mgcv)
-    rgl.open()
-    do.call('par3d', par3d)
-  }
+# none
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

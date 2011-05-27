@@ -11,7 +11,7 @@ if (help ) cat('
         ylab,
         zlab,
         xtend = .05, # axes extend beyond range of data
-        debug = T,
+        debug = TRUE,
         revolutions = 0,
         bg.col = c("white", "black"),
         axis.col = if (bg.col == "white") "black" else "white",
@@ -39,10 +39,10 @@ if (help ) cat('
         level=0.5,
         model.summary=FALSE,
         verbose = 0,
-        clear = T,
+        clear = TRUE,
         pow = -1,
-        origin = F,
-        axes = T,
+        origin = FRUE,
+        axes = TRUE,
         lines.col = "gray",
         lines.lwd= 1)
 ') else UseMethod("Plot3d")
@@ -106,7 +106,7 @@ function( formula = attr(data, "formula"),
             zoom = 1,
             fov = 15,
 #            keep.view = missing(phi) && missing(theta) && missing(zoom) && missing(fov),
-            keep.view = F,
+            keep.view = FALSE,
             ...) {
 
 # BUG: subset and groups might not work together
