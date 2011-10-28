@@ -17,8 +17,8 @@ Visualization of models in 3D
 \tabular{ll}{
 Package: \tab p3d\cr
 Type: \tab Package\cr
-Version: \tab 0.02\cr
-Date: \tab 2009-06-14\cr
+Version: \tab 0.02-3\cr
+Date: \tab 2011-10-28\cr
 License: \tab GPL version 2 or newer\cr
 LazyLoad: \tab yes\cr
 }
