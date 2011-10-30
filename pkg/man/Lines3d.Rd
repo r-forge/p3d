@@ -1,34 +1,42 @@
 \name{Lines3d}
 \Rdversion{1.1}
 \alias{Lines3d}
+\alias{Lines3d.default}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Draw lines in 3D space
 }
 \description{
-    Lines3d allows arguments to be vectors or matrices whose corresponding
-    axes as specified with names of the form 'x', 'xy', 'yxz', etc.
+A general function to draw lines or figures composed of lines in 3D space.
+    
+\code{Lines3d} allows arguments to be vectors or matrices whose corresponding
+axes are specified with names of the form 'x', 'xy', 'yxz', etc.
 }
 \usage{
-Lines3d(obj, ..., col = "blue")
+Lines3d(obj, ...)
+
+\method{Lines3d}{default}(obj, ...)
+
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{obj}{
-%%     ~~Describe \code{obj} here~~
+Not presently used.
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+The \code{\dots}} argument is used to pass a collection
+of vectors or matrices whose corresponding
+axes are specified with names of the form 'x', 'xy', 'yxz'.
+Special forms assigning \code{x}, \code{y}, \code{z} as \code{'min'} or \code{'max'}, such as
+\code{x='min'} are treated appropriately.
+Other arguments, such as \code{col}, \code{lwd} can also be passed.
 }
-  \item{col}{
-%%     ~~Describe \code{col} here~~
-}
-}
-\details{
+
+%\details{
 %%  ~~ If necessary, more details than the description above ~~
-}
+%}
 \value{
-%%  ~Describe the value returned
+None
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}

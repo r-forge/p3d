@@ -25,7 +25,7 @@ cat("Click right mouse button without selecting a point to terminate\n")
 }
 
 Identify3d <-
-function(obj, ... ) {
+function(x, ... ) {
 '
     Use the right mouse button and drag a rectangle to selects points.
     Click and drag empty region to end.
@@ -45,14 +45,14 @@ function( formula = attr(data, "formula"),
 }
 Identify3d.default <-
 function (
-
     x = pars$data[[pars$names['x']]],
     y = pars$data[[pars$names['y']]],
     z = pars$data[[pars$names['z']]],
     labels = rownames(.Plot3d.par$data), groups = NULL,
     col = Plot3d.par()$col ,   # c("blue", "green", "orange", "magenta", "cyan", "red", "yellow", "gray"),
     adj = 0, debug = FALSE, pad = 0,
-    offset = ((100/length(x))^(1/3)) * 0.02) {
+    offset = ((100/length(x))^(1/3)) * 0.02,
+	...) {
     pars <- Plot3d.par()
     ## added by GM Nov 9
        if ( ( is.matrix(x) && (ncol(x) > 1) ) || is.data.frame(x) ) {

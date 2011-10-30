@@ -1,63 +1,105 @@
 \name{Identify3d}
 \Rdversion{1.1}
 \alias{Identify3d}
+\alias{Identify3d.default}
+\alias{Identify3d.formula}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Identify in 3d
+Identify points in 3D
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+The function Identify3d allows you to label points interactively with the mouse: Press the right mouse button 
+(on a two-button mouse) or the centre button (on a three-button mouse), drag a rectangle around the points 
+to be identified, and release the button. 
+Repeat this procedure for each point or set of "nearby" points to be identified. 
+
+To exit from point-identification mode, click the right (or centre) button in an empty region of the plot.
 }
 \usage{
-Identify3d(obj, ...)
+Identify3d(x, ...)
+
+\method{Identify3d}{default}(
+    x = pars$data[[pars$names['x']]],
+    y = pars$data[[pars$names['y']]],
+    z = pars$data[[pars$names['z']]],
+    labels = rownames(.Plot3d.par$data), groups = NULL,
+    col = Plot3d.par()$col, 
+    adj = 0, debug = FALSE, pad = 0,
+    offset = ((100/length(x))^(1/3)) * 0.02,
+    ...
+    )
+
+\method{Identify3d}{formula}(formula = attr(data, "formula"), data = sys.parent(), labels = NULL, adj = 0, ...)
+
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{obj}{
-%%     ~~Describe \code{obj} here~~
+  \item{formula}{"model" formula, of the form \code{y ~ x + z}.
+}
+  \item{x}{variable for horizontal axis.
+}
+  \item{y}{variable for vertical axis (response).
+}
+  \item{z}{variable for out-of-screen axis.
+}
+  \item{labels}{
+	text labels for the points, one for each point; in the default method defaults to the observation indices, in the formula method to the row names of the data
+}
+  \item{groups}{A factor or variable dividing the observations into groups.
+}
+  \item{col}{colors for the point labels.
+}
+  \item{adj}{
+label \code{adj} value, passed to \code{\link[rgl]{rgl.texts}}
+}
+  \item{debug}{
+if \code{TRUE}, print debugging output.
+}
+  \item{pad}{
+padding between point and label, in number of \code{" "} characters.
+}
+  \item{offset}{
+offset to \code{y} value, passed to \code{\link[rgl]{rgl.texts}}.
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+Other arguments passed down
 }
 }
-\details{
+%\details{
 %%  ~~ If necessary, more details than the description above ~~
-}
+%}
 \value{
-%%  ~Describe the value returned
+\code{Identify3d} returns the labels of the identified points
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Georges Monette
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{Plot3d}}
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+\dontrun{
+    head(Smoking)
+    rownames(Smoking) = Smoking$Country
 
-## The function is currently defined as
-function(obj, ... ) {
-'
-    Use the right mouse button and drag a rectangle to selects points.
-    Click and drag empty region to end.
-'
-    UseMethod("Identify3d")
-  }
+    Init3d(family = 'serif', cex = 1.5)
+    Plot3d( LE ~ CigCon + HealthExpPC | Continent, Smoking)
+    Axes3d()
+    Identify3d(pad=1)
+ }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

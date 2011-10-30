@@ -3,10 +3,13 @@
 \alias{spin}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Spin a 3D plot
+Spin or rotate a 3D plot
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Like \code{rgl.viewpoint} but starts with defaults from \code{par3d},  except
+for \code{theta} (rotation around vertical axis)
+and \code{phi} (angular height above the horizontal plane) 
+
 }
 \usage{
 spin(theta = 0, phi = 15, fov = par3d("FOV"), zoom = par3d("zoom"), scale = par3d("scale"), stay = FALSE)
@@ -14,48 +17,48 @@ spin(theta = 0, phi = 15, fov = par3d("FOV"), zoom = par3d("zoom"), scale = par3
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{theta}{
-%%     ~~Describe \code{theta} here~~
+rotation around vertical axis
 }
   \item{phi}{
-%%     ~~Describe \code{phi} here~~
+angular height above the horizontal plane
 }
   \item{fov}{
 %%     ~~Describe \code{fov} here~~
 }
   \item{zoom}{
-%%     ~~Describe \code{zoom} here~~
+Zoom factor, passed to \code{link[rgl]{rgl.viewpoint}}
 }
   \item{scale}{
-%%     ~~Describe \code{scale} here~~
+Scale factor, passed to \code{link[rgl]{rgl.viewpoint}}
 }
   \item{stay}{
-%%     ~~Describe \code{stay} here~~
+Not used in this implementation. 
 }
 }
-\details{
+%\details{
 %%  ~~ If necessary, more details than the description above ~~
-}
+%}
 \value{
-%%  ~Describe the value returned
+None.
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Georges Monette
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{link[rgl]{rgl.viewpoint}}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----

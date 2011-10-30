@@ -1,6 +1,7 @@
 Version 0.02-3 (10-28-2011) (MF)
 	o Init3d() adds ... to rgl.open()
 	o merged documentation and examples from p3d.beta :: man/Smoking.Rd
+	o fixed S3 documentation warnings and codoc mismatches for Identify3d and Lines3d
 
 Version 0.02-2 (05-27-2011) (MF)
 	o Added missing ellipsoid function
