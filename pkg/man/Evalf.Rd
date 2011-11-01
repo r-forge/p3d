@@ -6,7 +6,7 @@
 Evaluates a function like predicts evaluates a model
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Evaluates a function like \code{predict} evaluates a model
 }
 \usage{
 Evalf(fun, data = newdata, newdata)
@@ -33,15 +33,15 @@ Evalf(fun, data = newdata, newdata)
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Georges Monette
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 

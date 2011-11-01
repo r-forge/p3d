@@ -1,6 +1,7 @@
 \name{Ell3d}
 \Rdversion{1.1}
 \alias{Ell3d}
+\alias{Ell3d.default}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Add ellipsoid(s) to a 3D plot

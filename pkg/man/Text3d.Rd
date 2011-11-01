@@ -1,16 +1,20 @@
 \name{Text3d}
 \Rdversion{1.1}
 \alias{Text3d}
+\alias{Text3d.default}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Add text to a 3D plot (in development)
+Add text to a 3D plot 
 %%  ~~function to do ... ~~
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Add text to a 3D plot (in development)
 }
 \usage{
-Text3d(obj, ...)
+Text3d(obj, ..., col = "blue")
+
+\method{Text3d}{default}(..., col = "blue")
+
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -18,7 +22,10 @@ Text3d(obj, ...)
 %%     ~~Describe \code{obj} here~~
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+See details.
+}
+  \item{col}{
+Text color.
 }
 }
 \details{
@@ -47,7 +54,8 @@ Georges Monette
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-\code{\link{Lines3d}}, ~~~
+\code{\link{Lines3d}}, \code{\link{args3d}}, 
+\code{\link[rgl]{rgl.texts}}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----

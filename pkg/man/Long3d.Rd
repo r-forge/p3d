@@ -6,7 +6,7 @@
 Represent hierarchical longitudinal data in 3D
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Represent hierarchical longitudinal data in 3D
 }
 \usage{
 Long3d(fmla, data, id, ..., col.lines = "grey", lwd.lines = 1)
@@ -42,15 +42,15 @@ Long3d(fmla, data, id, ..., col.lines = "grey", lwd.lines = 1)
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Georges Monette
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 

@@ -6,7 +6,7 @@
 Increment a number possibly represented in a character string or factor
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Increment a number possibly represented in a character string or factor
 }
 \usage{
 Inc(n)
@@ -14,7 +14,7 @@ Inc(n)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{n}{
-%%     ~~Describe \code{n} here~~
+A number, character string or factor
 }
 }
 \details{
@@ -27,15 +27,15 @@ Inc(n)
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Georges Monette
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
