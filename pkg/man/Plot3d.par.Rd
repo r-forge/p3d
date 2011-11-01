@@ -6,66 +6,50 @@
 Manipulate parameters for 3D plotting
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Manipulate parameters for 3D plotting
 }
 \usage{
-Plot3d.par(..., default = FALSE)
+Plot3d.par(..., new = FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{\dots}{
 %%     ~~Describe \code{\dots} here~~
 }
-  \item{default}{
-%%     ~~Describe \code{default} here~~
+  \item{new}{
+If \code{TRUE}, initiate a new list of graphics parameters for rgl.
 }
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
+Returns the old value
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Georges Monette
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{Plot3d}}, ~~~
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
 ##--	or do  help(data=index)  for the standard data sets.
 
-## The function is currently defined as
-function(..., default = FALSE ) {
-    if( default ) assign(".Plot3d.par",
-        list(),    # default
-        pos = 1)
-   # if ( exists(".tt") ) pars <- .tt
-   if ( exists(".Plot3d.par") ) pars <- .Plot3d.par
-    else pars <- list()
-     #    disp(pars)
-    if (length( a <- list(...)) == 0) return(pars)
-    if (is.null(names(a))) return( pars[unlist(a)] )
-    old <- pars[names(a)]
-    pars[names(a)] <- a
-    assign(".Plot3d.par", pars, pos = 1)
-    old
-  }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

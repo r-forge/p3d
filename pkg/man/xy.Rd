@@ -6,7 +6,7 @@
 Points from list for plotting
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Turn a list of points into a matrix for plotting
 }
 \usage{
 xy(p1, p2)
@@ -14,31 +14,31 @@ xy(p1, p2)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{p1}{
-%%     ~~Describe \code{p1} here~~
+A matrix of (x,y) coordinates, or a list of such matrices
 }
   \item{p2}{
-%%     ~~Describe \code{p2} here~~
+A matrix of (x,y) coordinates
 }
 }
-\details{
+%\details{
 %%  ~~ If necessary, more details than the description above ~~
-}
+%}
 \value{
-%%  ~Describe the value returned
+The result of \code{rbind} on the arguments
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Georges Monette
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 

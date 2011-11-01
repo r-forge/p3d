@@ -4,6 +4,7 @@ Version 0.02-3 (10-28-2011) (MF)
 	o fixed S3 documentation warnings and codoc mismatches for Identify3d and Lines3d
 	o merged Points.*.R and Points.*.Rd files, deleting the separate method files
 	o merged Lines.*.R and Lines.*.Rd files, deleting the separate method files
+	o merged Surf3d.*.R and Surf3d.*.Rd files, deleting the separate method files
 	o merged Text3d.*.Rd files, deleting the separate method files
 
 Version 0.02-2 (05-27-2011) (MF)

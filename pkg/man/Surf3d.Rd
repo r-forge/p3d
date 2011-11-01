@@ -1,62 +1,62 @@
 \name{Surf3d}
 \Rdversion{1.1}
 \alias{Surf3d}
+\alias{Surf3d.default}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Add a surface to 3D plot (in development)
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Add a surface to 3D plot (in development)
 }
 \usage{
 Surf3d(x, ...)
+
+\method{Surf3d}{default}(x, z, y, ...)
+
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
 %%     ~~Describe \code{x} here~~
 }
+  \item{z}{
+%%     ~~Describe \code{z} here~~
+}
+  \item{y}{
+%%     ~~Describe \code{y} here~~
+}
   \item{\dots}{
 %%     ~~Describe \code{\dots} here~~
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+This function is just a stub for future development.
 }
 \value{
-%%  ~Describe the value returned
+None
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Georges Monette
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{Plot3d}},
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function( x ,...) {
-  help = "
-    Surf3d methods not yet written
-  "
-  UseMethod("Surf3d")
-  }
+# None
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
