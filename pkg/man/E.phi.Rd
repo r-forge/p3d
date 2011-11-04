@@ -6,7 +6,7 @@
 Incline horizontal plane by phi degree
 }
 \description{
-Incline horizontal plane by phi degree
+Calculates the matrix to incline the horizontal plane of a 3D plot by phi degree
 }
 \usage{
 E.phi(phi)
@@ -14,14 +14,14 @@ E.phi(phi)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{phi}{
-     Angle
+     Angle, in degrees.
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+The \code{userMatrix} for spinning has the form \code{E.phi(phi) \%*\% S.theta(theta) }
 }
 \value{
-%%  ~Describe the value returned
+Returns the 4 x 4 rotation matrix
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
@@ -40,7 +40,7 @@ Georges Monette
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{S.theta}}, ~~~
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
