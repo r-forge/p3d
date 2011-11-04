@@ -31,9 +31,10 @@ Georges Monette
 
 Maintainer: Georges Monette <georges@yorku.ca>
 }
-%\references{
-%~~ Literature or other references for background information ~~
-%}
+\references{
+Monette, G. (1990), Geometry of Multiple Regression and Interactive 3-D Graphics, In Fox, J. & Long, S. (ed.), 
+\emph{Modern Methods of Data Analysis}, Sage Publications, 209-256. 
+}
 %~~ Optionally other standard keywords, one per line, from file KEYWORDS in the R documentation directory ~~
 \keyword{ package }
 \keyword{ multivariate }

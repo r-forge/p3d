@@ -8,7 +8,7 @@
 \alias{ellpt}
 \alias{ellptc}
 \alias{ellbox}
-\alias{cell}
+%\alias{cell}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Ellipses in 2D
@@ -79,7 +79,7 @@ Georges Monette
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-\code{\link{dell}}, ~~~
+\code{\link{cell}}, \code{\link{dell}}, \code{\link{ell.conj}}, ~~~
 }
 \examples{
 \dontrun{
@@ -93,5 +93,5 @@ Georges Monette
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{dplot}
+%\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

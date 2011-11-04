@@ -14,13 +14,13 @@ ell.conj(center, shape, dir, radius = 1, len = 1)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{center}{
-%%     ~~Describe \code{center} here~~
+center of the ellipse
 }
   \item{shape}{
-%%     ~~Describe \code{shape} here~~
+shape matrix of the ellipse
 }
   \item{dir}{
-%%     ~~Describe \code{dir} here~~
+a vector specifying a direction along which to find conjugate axes or tangent lines
 }
   \item{radius}{
 %%     ~~Describe \code{radius} here~~
@@ -33,26 +33,31 @@ ell.conj(center, shape, dir, radius = 1, len = 1)
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-%%  ~Describe the value returned
+Returns a list with the following components
 %%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
+  \item{u }{}
+  \item{v }{}
+  \item{tan1 }{}
+  \item{tan2 }{}
+  \item{tan3 }{}
+  \item{tan4 }{}
+  \item{center }{ellipse center}
 %% ...
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Georges Monette
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{uv}}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----

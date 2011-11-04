@@ -36,9 +36,9 @@ Returns the old value
 \author{
 Georges Monette
 }
-%\note{
-%%  ~~further notes~~
-%}
+\note{
+This function should be renamed, since it is not a Plot3d method
+}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
