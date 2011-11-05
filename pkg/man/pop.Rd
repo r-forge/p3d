@@ -3,10 +3,10 @@
 \alias{pop}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Remove last object added to plot
+Remove last objects added to a 3D plot
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Remove last \code{n} objects added to a 3D plot via \code{rgl.pop}
 }
 \usage{
 pop(n = 1, ...)
@@ -14,36 +14,37 @@ pop(n = 1, ...)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{n}{
-%%     ~~Describe \code{n} here~~
+Number of items to remove
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+Passed to \code{rgl.pop}
 }
 }
-\details{
+%\details{
 %%  ~~ If necessary, more details than the description above ~~
-}
+%}
 \value{
+None.
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Georges Monette
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{Pop3d}}, ~~~
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----

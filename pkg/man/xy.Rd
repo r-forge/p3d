@@ -6,7 +6,7 @@
 Points from list for plotting
 }
 \description{
-Turn a list of points into a matrix for plotting
+Turn lists of points into a matrix for plotting
 }
 \usage{
 xy(p1, p2)
@@ -43,7 +43,7 @@ Georges Monette
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link[base]{rbind}}, ~~~
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
@@ -59,5 +59,5 @@ function( p1, p2 ) {
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{dplot}
+%\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

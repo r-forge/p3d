@@ -71,16 +71,16 @@ ConjComp <- function( X , Z = diag( nrow(X)) , ip = diag( nrow(X)), tol = 1e-07 
 
 uv <- function(object,...) UseMethod('uv')
 
-uv.ell <- function( ell, u, radius = 1){
-        p <- attr(ell,"parms")
+uv.ell <- function( object, u, radius = 1, ...){
+        p <- attr(object,"parms")
         uv( p$shape, u=u, radius=radius)
 }
 uv.default <-
-function( shape, u , radius = 1) {
+function( object, u , radius = 1, ...) {
        # returns 'unit' u and conjugate v
-            u <- u / sqrt( sum( u*solve(shape,u)))   # 'unit' vector in direction of dir
-            v <- c(ConjComp( u, diag(2) , solve(shape)))  # conjugate
-            v <- v / sqrt( sum( v * solve( shape, v)))
+            u <- u / sqrt( sum( u*solve(object,u)))   # 'unit' vector in direction of dir
+            v <- c(ConjComp( u, diag(2) , solve(object)))  # conjugate
+            v <- v / sqrt( sum( v * solve( object, v)))
        list(u = radius * u, v= radius * v)
     }
 

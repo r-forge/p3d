@@ -6,7 +6,7 @@
 Find conjugate axes or tangent lines to ellipse
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Find conjugate axes or tangent lines to ellipse
 }
 \usage{
 ell.conj(center, shape, dir, radius = 1, len = 1)
@@ -30,7 +30,7 @@ a vector specifying a direction along which to find conjugate axes or tangent li
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+None yet
 }
 \value{
 Returns a list with the following components
@@ -79,5 +79,5 @@ function( center, shape, dir, radius = 1, len = 1) {
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
+\keyword{dplot}
 \keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

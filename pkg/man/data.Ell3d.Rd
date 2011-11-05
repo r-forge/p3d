@@ -6,7 +6,7 @@
 Data ellipse in 3D
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Plots a data ellipse in 3D for the current data
 }
 \usage{
 data.Ell3d(...)
@@ -18,29 +18,30 @@ data.Ell3d(...)
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+None yet.
 }
 \value{
+None
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Georges Monette
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{Ell3d}}, ~~~
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
@@ -63,5 +64,5 @@ function(  ... ) {
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
+\keyword{aplot}
 \keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

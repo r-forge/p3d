@@ -4,7 +4,7 @@
 %\alias{dell}
 \alias{ellplus}
 \alias{elltan}
-\alias{ellptanc}
+\alias{elltanc}
 \alias{ellpt}
 \alias{ellptc}
 \alias{ellbox}
@@ -31,7 +31,7 @@ ellptc( ell, dir = c(0,1) , radius = 1 )
 
 elltan( ell, dir = c(0,1) , radius = 1 , len = 1, v= c(-1,1))
 
-ellptanc( ell, dir = c(0,1) , radius = 1 , len = 1, v= c(-1,1))
+elltanc( ell, dir = c(0,1) , radius = 1 , len = 1, v= c(-1,1))
 
 ellbox( ell, dir = c(0,1) , radius = 1 )
 
@@ -59,7 +59,14 @@ ellbox( ell, dir = c(0,1) , radius = 1 )
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+\code{ell} returns a matrix of points on the ellipse, suitable for plotting
+with \code{lines}.
+
+\code{ellpt} returns a point on an ellipse particular direction specified by \code{dir}
+
+\code{ellptc} returns a point on an ellipse in a conjugate direction specified by \code{dir}
+
+
 }
 \value{
 The functions \code{ell} and \code{dell} return an object of class \code{ell} consisting of

@@ -48,7 +48,7 @@ Georges Monette
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{ell}}, \code{\link{cell}}, ~~~
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
@@ -65,5 +65,5 @@ function( x, y, radius = 1, ...) {
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{dplot}
+%\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

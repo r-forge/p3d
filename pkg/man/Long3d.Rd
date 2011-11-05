@@ -33,10 +33,10 @@ Long3d(fmla, data, id, ..., col.lines = "grey", lwd.lines = 1)
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+None yet
 }
 \value{
-%%  ~Describe the value returned
+None
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
@@ -55,7 +55,7 @@ Georges Monette
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+ \code{\link{Plot3d}}, ~~~
 }
 \examples{
 \dontrun{

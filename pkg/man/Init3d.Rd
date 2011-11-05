@@ -31,6 +31,7 @@ Init3d(par3d = list(), family = c("sans", "serif", "mono", "symbol"),  mouseMode
 for subsequent plots.
 }
 \value{
+None.
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}

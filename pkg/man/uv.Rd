@@ -1,53 +1,62 @@
 \name{uv}
 \Rdversion{1.1}
 \alias{uv}
+\alias{uv.ell}
+\alias{uv.default}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Conjugate complement of a space
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Conjugate complement of a space
 }
 \usage{
-uv(shape, u, radius = 1)
+uv(object, ...)
+\method{uv}{ell}(object, u, radius = 1, ...)
+\method{uv}{default}(object, u, radius = 1, ...)
+
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{shape}{
-%%     ~~Describe \code{shape} here~~
+  \item{object}{
+An \code{ell} object or the shape matrix for a multivariate sample
 }
   \item{u}{
-%%     ~~Describe \code{u} here~~
+A direction vector
 }
   \item{radius}{
-%%     ~~Describe \code{radius} here~~
+Radius
 }
+  \item{\dots}{
+Other arguments
+}
+
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+None yet
 }
 \value{
-%%  ~Describe the value returned
+A list with elements
 %%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
+  \item{u}{A unit vector in the direction 'dir'}
+  \item{v}{Conjugate direction}
 %% ...
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Georges Monette
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
+%\seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+%}
 \examples{
 ##---- Should be DIRECTLY executable !! ----
 ##-- ==>  Define data, use random,
@@ -76,5 +85,5 @@ function( shape, u , radius = 1) {
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
+\keyword{dplot}
 \keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
