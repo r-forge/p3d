@@ -6,7 +6,7 @@
 Generate arguments to plot a line
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Generates arguments to plot a line via \code{abline}
 }
 \usage{
 abline2(p1, p2, ...)
@@ -14,39 +14,39 @@ abline2(p1, p2, ...)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{p1}{
-%%     ~~Describe \code{p1} here~~
+Either a list of points or a single point
 }
   \item{p2}{
-%%     ~~Describe \code{p2} here~~
+Another point
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+Other points, or arguments to \code{abline}
 }
 }
-\details{
+%\details{
 %%  ~~ If necessary, more details than the description above ~~
-}
+%}
 \value{
-%%  ~Describe the value returned
+None. Used for its side effect
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Georges Monette
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link[graphics]{abline}}
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
@@ -61,5 +61,5 @@ function( p1, p2, ...) {
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
+\keyword{dplot}
 \keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

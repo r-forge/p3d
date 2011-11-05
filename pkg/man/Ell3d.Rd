@@ -38,6 +38,7 @@ Ell3d(x, ...)
 }
   \item{alpha}{ default 0.5. Controls transparency of ellipsoid.}
   \item{verbose}{be verbose?}
+  \item{\dots}{other arguments passed down}
 }
 %\details{
 %%%  ~~ If necessary, more details than the description above ~~

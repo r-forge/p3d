@@ -6,7 +6,10 @@
 Process 3D arguments
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Process 3D arguments, also allowing \code{xy}, \code{xz}, \code{yz} to
+indicate planes in 3D space, and allowing, e.g., \code{x='min'},
+\code{x='max'}, \code{x='mid'} to specify the minimum, maximum, or
+middle value for a given coordinate axis.
 }
 \usage{
 args3d(...)
@@ -14,33 +17,36 @@ args3d(...)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+A collection of arguments for 3D graphics functions including
+\code{x}, \code{y}, \code{z}
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+For any coordinate axis or plane you can specify 'min', 'max', 'mid' as values 
+
 }
 \value{
-%%  ~Describe the value returned
+Returns a list with a matrix, x with xyz values and with other arguments
+specified in the call.
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Georges Monette
 }
 \note{
-%%  ~~further notes~~
+If  the first argument is positional then variables must be in order x,y,z
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{Plot3d}}, \code{\link{Lines3d}}, 
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
@@ -105,5 +111,5 @@ help <- "
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
+\keyword{dplot}
 \keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

@@ -7,6 +7,7 @@ Version 0.02-3 (10-28-2011) (MF)
 	o merged Surf3d.*.R and Surf3d.*.Rd files, deleting the separate method files
 	o merged Text3d.*.Rd files, deleting the separate method files
 	o copied coffee.rda and coffee.Rd from spida to allow wider examples without requiring spida package
+	o merged center.Rd and center.ell.Rd
 
 Version 0.02-2 (05-27-2011) (MF)
 	o Added missing ellipsoid function

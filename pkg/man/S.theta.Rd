@@ -3,9 +3,10 @@
 \alias{S.theta}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Rotate around vertical axis by phi degrees
+Rotate around vertical axis by theta degrees
 }
 \description{
+Calculates the matrix to rotate around the vertical axis of a 3D plot by theta degrees
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
@@ -14,33 +15,35 @@ S.theta(theta)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{theta}{
-%%     ~~Describe \code{theta} here~~
+Angle of rotation
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+The \code{userMatrix} for spinning has the form \code{E.phi(phi) \%*\% S.theta(theta) }
+
 }
 \value{
+Returns the 4 x 4 rotation matrix
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Georges Monette
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{E.phi}}, ~~~
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----
@@ -56,5 +59,5 @@ function( theta ) {
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
+\keyword{dplot}
 \keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

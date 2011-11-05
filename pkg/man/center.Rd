@@ -1,49 +1,53 @@
 \name{center}
 \Rdversion{1.1}
 \alias{center}
+\alias{center.ell}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Center of object
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Return the center of an object
 }
 \usage{
 center(obj, ...)
+
+\method{center}{ell}(obj, ...)
+
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{obj}{
-%%     ~~Describe \code{obj} here~~
+A \code{ell} object
 }
   \item{\dots}{
-%%     ~~Describe \code{\dots} here~~
+Other arguments
 }
 }
-\details{
+%\details{
 %%  ~~ If necessary, more details than the description above ~~
-}
+%}
 \value{
-%%  ~Describe the value returned
+Returns the \code{center} attribute of an ellipse
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
+%\references{
 %% ~put references to the literature/web site here ~
-}
+%}
 \author{
 Georges Monette
 }
-\note{
+%\note{
 %%  ~~further notes~~
-}
+%}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{ell}}, ~~~
 }
 \examples{
 ##---- Should be DIRECTLY executable !! ----

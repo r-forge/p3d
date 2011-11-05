@@ -59,7 +59,7 @@ Georges Monette
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%\code{\link{[rgl]{rgl.snapshot}}}, ~~~
+\code{\link[rgl]{rgl.snapshot}}
 }
 \examples{
 \dontrun{

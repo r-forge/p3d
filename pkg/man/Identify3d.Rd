@@ -36,6 +36,8 @@ Identify3d(x, ...)
 \arguments{
   \item{formula}{"model" formula, of the form \code{y ~ x + z}.
 }
+  \item{data}{data frame, for the formula method.
+}
   \item{x}{variable for horizontal axis.
 }
   \item{y}{variable for vertical axis (response).
@@ -103,5 +105,5 @@ Georges Monette
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
-\keyword{ ~kwd1 }
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{iplot}
+%\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
