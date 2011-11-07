@@ -42,6 +42,7 @@ function (object, which.coef, levels = 0.95, Scheffe = FALSE, dfn = 2,
 		ylab <- if (missing(ylab))
 			paste(names(coef)[2], "coefficient")
 		if(missing(dfn)) {
+## FIXME: df.terms below is considered a global (undefined) object
 			if (Scheffe) dfn <- sum(df.terms(object))
 			else 2
 		}

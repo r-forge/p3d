@@ -122,6 +122,28 @@ Georges Monette
  Fit3d ( lm(inc ~ women + education,Prestige))
  Fit3d ( lm(inc ~ women * education,Prestige), col="pink")
 }
+
+data(coffee)
+# fit marginal and joint models
+fit.stress <- lm(Heart ~ Stress, data=coffee)
+fit.coffee <- lm(Heart ~ Coffee, data=coffee)
+fit.both   <- lm(Heart ~ Coffee + Stress, data=coffee)
+
+Init3d(cex=1.2)
+Plot3d( Heart ~ Coffee + Stress, coffee,
+	surface=TRUE, fit="linear", surface.col="lightblue", 
+	grid.lines=10, sphere.size=0.6)
+box3d(color="gray")
+
+data.Ell3d(col="lightblue")
+# bivariate marginal ellipses
+Lines3d( y = 'min', xz = with( coffee, dell( Coffee, Stress)), lwd=2, color="black")
+Lines3d( z = 'min', xy = with( coffee, dell( Coffee, Heart)), lwd=2, color="blue")
+Lines3d( x = 'min', yz = with( coffee, dell( Heart, Stress)), lwd=2, color="blue")
+# fitted marginal regression planes
+Fit3d(fit.stress, col="pink")
+Fit3d(fit.coffee, col="green")
+
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

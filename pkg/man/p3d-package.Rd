@@ -7,11 +7,34 @@
 Visualization of models in 3D
 }
 \description{
-    \code{p3d} is a very rough collection of functions to help visualize models
-    that are expressed as functions of two independent variables with the
-    addition of a possible categorical variable. It is based on an older version
-    of \code{scatter3d} in the \code{car} package by John Fox which, in turn,
-    uses the \code{rgl} package.
+\code{p3d} is a very rough collection of functions to help visualize models
+that are expressed as functions of two independent variables with the
+addition of a possible categorical variable. It is based on an older version
+of \code{scatter3d} in the \code{car} package by John Fox which, in turn,
+uses the \code{rgl} package.
+
+The essential idea is provided by the \code{\link{Plot3d}} function, 
+which allows plotting a data frame via a formula of the form
+\code{y ~ x + z [| g]}, where \code{y} is the response,
+\code{x, z} are independent variables and \code{g} is an optional 
+grouping factor.  In addition to generating the plot, the function 
+saves information about the current data frame and graphics parameters
+in a globally accessible structure.
+
+Following a call to \code{\link{Plot3d}}, the following can be done using simple calls:
+
+points can be interactively labeled using \code{\link{Identify3d}};
+
+the fitted surfaces for other related
+models using the same data can be added using \code{\link{Fit3d}}
+
+graphical annotations that can be represented as a collection of line segments in 3D space
+can be added using \code{\link{Lines3d}}
+
+3D data ellipsoids can be added using \code{\link{Ell3d}}
+
+In addition, the package contains a variety of utility functions for working with 2D and 3D
+models, graphical enhancements and 3D geometry.
 }
 \details{
 \tabular{ll}{

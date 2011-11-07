@@ -9,6 +9,9 @@ Version 0.02-3 (10-28-2011) (MF)
 	o copied coffee.rda and coffee.Rd from spida to allow wider examples without requiring spida package
 	o merged center.Rd and center.ell.Rd
 	o Fixed arguments of uv.default and uv.ell and documentation as S3 methods
+	o Added ConjComp.Rd and ellipsoid.Rd, previously undocumented
+	o Fixed minor bug in xy()
+	o Extended package description in p3d-package.Rd
 
 Version 0.02-2 (05-27-2011) (MF)
 	o Added missing ellipsoid function
