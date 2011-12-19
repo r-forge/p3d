@@ -22,7 +22,11 @@ Ell3d(x, ...)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{
-    optional matrix or data frame used to generate a data ellipsoid.
+    optional matrix or data frame used to generate a data ellipsoid. The default is
+    the data frame stored in Plot3d.par() when the plot was created. If \code{x} is a 
+    data frame, then \code{Ell3d} uses the dispersion ellipse for the plotted variable 
+    names in the data frame.  Thus \code{Plot3d(subset( data, Sex == 'male'), has.groups = FALSE)} will draw a dispersion ellipse for a selected subgroup provided the plotted 
+    variable names exist in \code{data}.
 %%     ~~Describe \code{center} here~~
 }
   \item{col}{

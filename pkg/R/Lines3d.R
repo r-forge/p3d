@@ -1,9 +1,9 @@
 ## merged Lines3d.R and Lines3d.default.R  10-30-2011 (MF)
 #  fixed args for Lines3d.default as an S3 method
-# TODO: obj serves no useful role and should be deleted if no other Linesed methods contemplated
+# TODO: obj serves no useful role and should be deleted if no other Linesed methods contemplated -- removed 11-04-2011 (GM)
 
 Lines3d <-
-function( obj, ... ) {
+function( ... ) {
     "
     Lines3d allows arguments to be vectors or matrices whose corresponding
     axes as specified with names of the form 'x', 'xy', 'yxz', etc.
@@ -12,7 +12,7 @@ function( obj, ... ) {
 }
 
 Lines3d.default <-
-		function(obj, ... )  {
+		function( ... )  {
 	a <- args3d(...)
 	# disp(a)
 	xyz <- a$x

@@ -1,3 +1,6 @@
+Version 0.02-4 (12-19-2011) (GM)
+	o Modified Plot3d.par to fix bug with namespaces occuring since R 14.0
+
 Version 0.02-3 (10-28-2011) (MF)
 	o Init3d() adds ... to rgl.open()
 	o merged documentation and examples from p3d.beta :: man/Smoking.Rd

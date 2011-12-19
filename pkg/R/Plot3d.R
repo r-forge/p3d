@@ -41,7 +41,7 @@ if (help ) cat('
         verbose = 0,
         clear = TRUE,
         pow = -1,
-        origin = FRUE,
+        origin = TRUE,
         axes = TRUE,
         lines.col = "gray",
         lines.lwd= 1)
@@ -56,24 +56,35 @@ Plot3d.par <- function(..., new = FALSE){
    # the selection of different windows
 
   a <- list(...)
+  
   #disp( environment())
   #if ( is.null(names(a))) disp(a)
   #else disp(names(a))
 
   pos <- rgl.cur()
 
-  if ( !exists(".Plot3d.par",1) || pos ==0) .Plot3d.par <<- list()  # initialize
+  if ( !exists(".Plot3d.par",1) || pos ==0) assign(".Plot3d.par",list(),1)  # initialize
   if( pos == 0) pos <- 1
-  if ( new ) .Plot3d.par[[pos]] <<- list()
-  if ( length( .Plot3d.par ) < pos) .Plot3d.par[[pos]] <<- list()
-  if ( length(a) == 0) return( .Plot3d.par[[pos]])
+  if ( new ){
+    p <- get(".Plot3d.par",1)
+    p[[pos]] <- list()
+    assign(".Plot3d.par",p,1)
+  } 
+  if ( length( p <- get(".Plot3d.par",1)) < pos){
+     p <- get(".Plot3d.par",1)
+    p[[pos]] <- list()
+    assign(".Plot3d.par",p,1)
+  } #.Plot3d.par[[pos]] <<- list()
+  if ( length(a) == 0) return(get(".Plot3d.par",1)[[pos]])
   if ( !is.null(names(a))) {
-
-   .Plot3d.par[[pos]][names(a)] <<- a
-  ret <- .Plot3d.par[[pos]]
+      p <- get(".Plot3d.par",1)
+      p[[pos]][names(a)] <- a
+      assign(".Plot3d.par",p,1)
+    
+      ret <- p[[pos]]
    }
    else {
-  ret <- .Plot3d.par[[pos]][[unlist(a)]]
+  ret <- get(".Plot3d.par",1)[[pos]][[unlist(a)]]
    }
  ret
  }

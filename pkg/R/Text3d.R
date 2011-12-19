@@ -10,9 +10,16 @@ function( obj, ..., col = "blue") {
     "
     UseMethod("Text3d")
 }
+# 
+# Text3d.default <-
+# function(...,col='blue'){
+# # disp( list(...,col=col))
+#  do.call("rgl.texts", args3d(...,col=col))
+# }
 
 Text3d.default <-
 function(...,col='blue'){
-# disp( list(...,col=col))
- do.call("rgl.texts", args3d(...,col=col))
+  a <- list(...,col=col)
+  if( !any(grepv("^text$",names(a)))) names(a)[names(a)==''] <- 'text'
+  do.call("rgl.texts", do.call(args3d,a))
 }
