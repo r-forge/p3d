@@ -1,3 +1,8 @@
+##
+## p3d:spin.R
+## 2011-12-22
+##
+
 spin <-
 function( theta=0, phi=15,
           fov = par3d("FOV"), zoom = par3d("zoom"), 

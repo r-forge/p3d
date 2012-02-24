@@ -1,3 +1,8 @@
+##
+## p3d:Evalf.R
+## 2011-12-22
+##
+
 Evalf <-
 function( fun, data = newdata, newdata ) {
     # this is meant to evaluate a function much like predict 'evaluates' a model

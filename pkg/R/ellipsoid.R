@@ -1,3 +1,9 @@
+##
+## p3d:ellipsoid.R
+## 2011-12-22
+##
+
+
 # from heplots; modified to work with p3d
 ellipsoid <- function(center, shape, radius=1, segments=60, warn.rank=FALSE){
 	# adapted from the shapes3d demo in the rgl package and from the Rcmdr package

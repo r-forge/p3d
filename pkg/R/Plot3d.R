@@ -1,3 +1,8 @@
+##
+## p3d:Plot3d.R
+## 2011-12-22
+##
+
 Plot3d <-
 function( x, y, z, ..., help = FALSE) {
 if (help ) cat('

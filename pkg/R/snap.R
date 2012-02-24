@@ -1,3 +1,9 @@
+##
+## p3d:snap.R
+## 2011-12-22
+##
+
+
 snap <-
 function( suffix = "", fn = .snap.fn, n = .snap.n, inc = TRUE, fmt = "png") {
          help <- "

@@ -1,3 +1,9 @@
+##
+## p3d:S.theta.R
+## 2011-12-22
+##
+
+
 S.theta <-
 function( theta ) {
     # rotate through vertical axis through phi degrees

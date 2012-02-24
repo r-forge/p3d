@@ -1,3 +1,7 @@
+##
+## p3d:Text3d.R
+## 2011-12-22
+##
 
 Text3d <-
 function( obj, ..., col = "blue") {
@@ -20,6 +24,6 @@ function( obj, ..., col = "blue") {
 Text3d.default <-
 function(...,col='blue'){
   a <- list(...,col=col)
-  if( !any(grepv("^text$",names(a)))) names(a)[names(a)==''] <- 'text'
+  if( !any(grepl("^text$",names(a)))) names(a)[names(a)==''] <- 'text'
   do.call("rgl.texts", do.call(args3d,a))
 }

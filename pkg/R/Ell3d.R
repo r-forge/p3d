@@ -1,3 +1,8 @@
+##
+## p3d:Ell3d.R
+## 2011-12-22
+##
+
 ##  Added 'partial ellipse' from p3d.beta 2011-11-05 (GM)
 
 

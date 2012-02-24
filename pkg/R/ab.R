@@ -1,3 +1,9 @@
+##
+## p3d:ab.R
+## 2011-12-22
+##
+
+
 ab <-
 function( p1, p2 ) {
        # prepare arguments to plot a line with

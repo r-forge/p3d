@@ -1,3 +1,8 @@
+##
+## p3d:cell.R
+## 2011-12-22
+##
+
 ## Last modified: 6-14-2009 by Michael Friendly
 #  - combined cell.R, cell.default, cell.glh into a single file
 #  - renamed first argument to 'object' for consistency as S3 methods 

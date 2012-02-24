@@ -1,3 +1,9 @@
+##
+## p3d:spins.R
+## 2011-12-22
+##
+
+
 spins <-
 function( inc.theta = 1/4, inc.phi = 0, theta = NULL, phi = NULL) {
  help = "

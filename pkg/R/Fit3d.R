@@ -1,3 +1,8 @@
+##
+## p3d:Fit3d.R
+## 2011-12-22
+##
+
 Fit3d <-
 function( fit, names.vars = pars$names,
         other.vars = NULL,   #list of values for variables used in model but not in display

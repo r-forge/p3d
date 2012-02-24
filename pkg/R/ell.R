@@ -1,3 +1,10 @@
+##
+## p3d:ell.R
+## 2011-12-22
+##
+
+
+
 ## Last modified by Georges Monette 2010-12-02
 ## Consolidated ell.R, dell.R, ell.conj.R, center.R and center.ell.F
 ## Added function ellpt, ellptc, elltan, elltanc, ellbox to generate points on ellipses,

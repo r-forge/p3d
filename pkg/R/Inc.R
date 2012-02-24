@@ -1,3 +1,9 @@
+##
+## p3d:Inc.R
+## 2011-12-22
+##
+
+
 Inc <-
 function( n ) {
         n <- as.character(n)

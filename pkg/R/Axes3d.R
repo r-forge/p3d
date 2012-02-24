@@ -1,3 +1,8 @@
+##
+## p3d:Axes3d.R
+## 2011-12-22
+##
+
 Axes3d <-
 function(n=5, len= .05,col = 'black', ...) {
     #

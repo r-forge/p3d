@@ -1,4 +1,8 @@
 ##
+## p3d:Init3d.R
+## 2011-12-22
+##
+##
 ##  GM: mod 2011-03-07: added ... to rgl.open to allow:
 
 # From: Carrie Smith:

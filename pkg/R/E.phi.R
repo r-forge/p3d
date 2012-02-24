@@ -1,3 +1,8 @@
+##
+## p3d:E.phi.R
+## 2011-12-22
+##
+
 E.phi <-
 function( phi ) {
     # incline horizontal plane by phi degrees

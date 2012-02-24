@@ -1,3 +1,8 @@
+##
+## p3d:Long3d.R
+## 2011-12-22
+##
+
 Long3d <-
 function( fmla, data, id, ..., col.lines = 'grey', lwd.lines = 1) {
       help <- "

@@ -1,3 +1,7 @@
+##
+## p3d:args3d.R
+## 2011-12-22
+##
 
 args3d <-   # remove this version is the next one works
 function(...) {

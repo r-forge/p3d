@@ -1,3 +1,9 @@
+##
+## p3d:scat3d.R
+## 2011-12-22
+##
+
+
 scat3d <-
 function(x, y, z, xlab=deparse(substitute(x)), ylab=deparse(substitute(y)),
     zlab=deparse(substitute(z)),
